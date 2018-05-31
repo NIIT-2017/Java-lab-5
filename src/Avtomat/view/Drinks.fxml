@@ -6,9 +6,10 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="sample.Drinks"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="50.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Avtomat.view.DrinkController">
+   <children>
+      <Button fx:id="changeButton" layoutX="22.0" layoutY="32.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="25.0" styleClass="buttonChange" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="10.0" />
+      <Label fx:id="drinkLabel" layoutX="79.0" layoutY="10.0" styleClass="nameDrinkLabel" text="drinks" AnchorPane.leftAnchor="80.0" AnchorPane.topAnchor="5.0" />
+      <Label fx:id="priceLabel" layoutX="79.0" layoutY="30.0" styleClass="nameDrinkLabel" text="price" AnchorPane.leftAnchor="80.0" AnchorPane.topAnchor="20.0" />
+   </children>
 </AnchorPane>

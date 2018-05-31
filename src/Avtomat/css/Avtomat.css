@@ -17,3 +17,7 @@
     -fx-font-style: italic;
     -fx-font-size: 14pt;
 }
+
+.grid{
+    -fx-vgap:10;
+}
