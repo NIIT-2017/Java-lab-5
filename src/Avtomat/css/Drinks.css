@@ -1,0 +1,41 @@
+.button{
+    -fx-text-fill: white;
+    -fx-background-color: black;
+    -fx-border-color: white;
+}
+
+.button:pressed{
+    -fx-border-color: red;
+}
+
+.label{
+    -fx-font-size: 11pt;
+    -fx-text-fill: white;
+}
+
+.buttonChange{
+    -fx-background-radius: 20;
+    -fx-background-color: silver;
+    -fx-border-color: black;
+    -fx-border-radius: 20;
+    -fx-pref-height: 30;
+    -fx-pref-width: 30;
+}
+
+.buttonChange:pressed{
+    -fx-background-radius: 20;
+    -fx-border-color: red;
+    -fx-border-radius: 20;
+    -fx-pref-height: 30;
+    -fx-pref-width: 30;
+}
+
+.nameDrinkLabel{
+    -fx-font-size: 14pt;
+    -fx-text-fill: white;
+}
+
+.textOutLabel{
+    -fx-font-style: italic;
+    -fx-font-size: 14pt;
+}

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<menu>
+    <drink>
+        <name>Американо</name>
+        <cost>100</cost>
+    </drink>
+    <drink>
+        <name>Капучино</name>
+        <cost>200</cost>
+    </drink>
+    <drink>
+        <name>Эспрессо</name>
+        <cost>120</cost>
+    </drink>
+    <drink>
+        <name>Мокачино</name>
+        <cost>180</cost>
+    </drink>
+</menu>

@@ -1,0 +1,19 @@
+.button{
+    -fx-text-fill: white;
+    -fx-background-color: black;
+    -fx-border-color: white;
+}
+
+.button:pressed{
+    -fx-border-color: red;
+}
+
+.label{
+    -fx-font-size: 11pt;
+    -fx-text-fill: white;
+}
+
+.textOutLabel{
+    -fx-font-style: italic;
+    -fx-font-size: 14pt;
+}
