@@ -11,6 +11,7 @@ import javafx.scene.control.Label;
 public class DrinkController {
     private Drink drink;
 
+
     @FXML
     private ResourceBundle resources;
 

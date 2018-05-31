@@ -9,7 +9,7 @@
 }
 
 .label{
-    -fx-font-size: 11pt;
+    -fx-font-size: 14pt;
     -fx-text-fill: white;
 }
 
@@ -18,6 +18,13 @@
     -fx-font-size: 14pt;
 }
 
-.grid{
-    -fx-vgap:10;
+.moneyButton{
+    -fx-background-radius: 20;
+    -fx-background-color: yellow;
+    -fx-text-fill: black;
+    -fx-border-color: black;
+    -fx-border-radius: 20;
+    -fx-pref-height: 40;
+    -fx-pref-width: 40;
+
 }
