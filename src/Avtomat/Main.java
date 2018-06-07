@@ -26,6 +26,7 @@ public class Main extends Application {
         InputStream io = Main.class.getResourceAsStream("data/Drinks.xml");
         //create automat and read list of drinks
         automat = new Automat(io);
+        automat.start();
         //main scene
         initMainScene();
     }
@@ -38,6 +39,7 @@ public class Main extends Application {
             AnchorPane rootLayOut = (AnchorPane) loader.load();
             Scene scene = new Scene(rootLayOut);
             AvtomatGUIController controller = loader.getController();
+            controller.setAutomat(automat);
             //get list of Drinks
             ArrayList<Drink> drinksList = automat.getDrinks();
             //paste frame of Drinks into main pane
@@ -64,7 +66,7 @@ public class Main extends Application {
             //load frame for drink
             AnchorPane drinkPane = (AnchorPane) loader.load();
             DrinkController drinkController = loader.getController();
-            drinkController.setDrink(drink);
+            drinkController.setupDrink(drink,automat);
             //set css for frame
             drinkPane.getStylesheets().add("Avtomat/css/Drinks.css");
             //add frame into grid pane

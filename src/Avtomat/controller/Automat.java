@@ -1,6 +1,8 @@
 package Avtomat.controller;
 
 import Avtomat.model.Drink;
+import javafx.application.Platform;
+import javafx.beans.property.*;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -14,8 +16,7 @@ import java.io.*;
 import java.util.*;
 
 
-public class Automat implements Runnable{
-
+public class Automat extends Thread{
 
     //Members
     enum States {OFF, WAIT,CHECK,COOK}
@@ -25,7 +26,8 @@ public class Automat implements Runnable{
     private double money;
     private int indexSelectedDrink;
     private ArrayList<Drink> drinks;
-
+    private StringProperty message;
+    private DoubleProperty percents;
     //Methods
     public Automat(InputStream stream) {
         this.stateAutomat = States.OFF;
@@ -34,24 +36,123 @@ public class Automat implements Runnable{
         drinks = new ArrayList<Drink>();
         indexSelectedDrink=0;
         readFromXML(stream);
+        message = new SimpleStringProperty("автомат выключен");
+        percents = new SimpleDoubleProperty();
+        setDaemon(true);
     }
 
     @Override
     public void run() {
-        while(true){
-            switch (stateAutomat){
-                //waiting
-                case WAIT:  break;
-                //checking
-                case CHECK: checkMoney();   break;
-                //cooling drink
-                case COOK:  cookDrink();    break;
-                default:    break;
+        while (true) {
+            work();
+            System.out.println(stateAutomat);
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
         }
     }
 
-    public void readFromXML(InputStream file){
+    //метод переводит автомат в состояние on
+    public void on(){
+        //включение возможено только из off
+
+        if (stateAutomat == States.OFF) {
+            stateAutomat = States.WAIT;
+            message.setValue("automat on");
+        }
+    }
+
+    //метод переводит автомат в состояние off
+    public void off() {
+        //выключение только из состояния wait
+
+        if (stateAutomat == States.WAIT) {
+            stateAutomat = States.OFF;
+            message.setValue("automat off");
+        }
+
+    }
+
+    //выбор напитка
+    public void choiceDrink(int drink){
+        if(stateAutomat ==States.WAIT) {
+            indexSelectedDrink = drink;
+            stateAutomat = States.CHECK;
+            message.setValue(drinks.get(drink).getDrink());
+        }
+    }
+
+    private void pay( double price){
+        if (stateAutomat ==States.CHECK){
+            //вход в состояние готовки только из состояния check
+            cash-=price;
+            money+=price;
+            stateAutomat =States.COOK;
+        }
+    }
+
+    //метод внесения денег на счет в автомате
+    public void coin(double cash){
+        if (cash>0.0) {
+            //занесение денег только из состояния check
+            if (stateAutomat == States.CHECK) this.cash += cash;
+        }
+    }
+
+    //напиток приготовлен
+    private void complite() {
+        compliteDrinkIndex = indexSelectedDrink;
+        stateAutomat =States.WAIT;
+    }
+
+    //возвращает деньги со счета
+    public double returnMoney() {
+        double result=cash;
+        cash=0.0f;
+        return result;
+    }
+
+    //цыкл работы автомата
+    private void work() {
+        switch (stateAutomat){
+            //waiting
+            case WAIT:  {
+
+                Platform.runLater(() -> message.setValue("Выберите напиток"));
+            }
+            break;
+            //checking
+            case CHECK: {
+                checkMoney();
+                Platform.runLater(() -> message.setValue("Внесите деньги"));
+            }   break;
+            //cooling drink
+            case COOK:  {
+                cookDrink();
+                Platform.runLater(() -> message.setValue("Напиток в производстве"));
+            }    break;
+            default:    break;
+        }
+    }
+
+    private void checkMoney(){
+        //проверить хватает ли на счете денег
+        double price =drinks.get(indexSelectedDrink).getCost();
+        if (price <= cash) pay(price);
+    }
+
+    private void cookDrink(){
+        if (percents.getValue()>=1.0) {
+            percents.setValue(0.0);
+            Platform.runLater(() -> message.setValue("напиток готов"));
+            complite();
+        }
+        else percents.setValue(percents.getValue()+0.1);
+    }
+
+    private void readFromXML(InputStream file){
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
         try {
             DocumentBuilder db = dbf.newDocumentBuilder();
@@ -73,21 +174,7 @@ public class Automat implements Runnable{
 
     }
 
-    //метод переводит автомат в состояние on
-    void on(){
-        //включение возможено только из off
-
-        if (stateAutomat == States.OFF) stateAutomat = States.WAIT;
-
-    }
-
-    //метод переводит автомат в состояние off
-    void off() {
-        //выключение только из состояния wait
-
-        if (stateAutomat == States.WAIT) stateAutomat = States.OFF;
-
-    }
+    //gets and sets
 
     int getCompliteDrinkIndex() {
         return compliteDrinkIndex;
@@ -97,7 +184,7 @@ public class Automat implements Runnable{
         return money;
     }
 
-    double getCash() {
+    public double getCash() {
         return cash;
     }
 
@@ -109,71 +196,19 @@ public class Automat implements Runnable{
         return drinks;
     }
 
-    //выбор напитка
-    void choiceDrink(int drink){
-        if(stateAutomat ==States.WAIT) {
-            indexSelectedDrink = drink;
-            stateAutomat = States.CHECK;
-            work();
-        }
+    public String getMessage() {
+        return message.get();
     }
 
-    private void pay( double price){
-        if (stateAutomat ==States.CHECK){
-            //вход в состояние готовки только из состояния check
-            cash-=price;
-            money+=price;
-            stateAutomat =States.COOK;
-        }
-        work();
+    public StringProperty stringProperty() {
+        return message;
     }
 
-    //метод внесения денег на счет в автомате
-    void coin(double cash){
-        if (cash>0.0) {
-            //занесение денег только из состояния check
-            if (stateAutomat == States.CHECK) this.cash += cash;
-            work();
-        }
+    public double getPercents() {
+        return percents.get();
     }
 
-    //напиток приготовлен
-    private void complite() {
-        compliteDrinkIndex = indexSelectedDrink;
-        stateAutomat =States.WAIT;
+    public DoubleProperty percentsProperty() {
+        return percents;
     }
-    //возвращает деньги со счета
-    double returnMoney() {
-        double result=cash;
-        cash=0.0f;
-        return result;
-    }
-
-    //цыкл работы автомата
-    private void work() {
-        switch (stateAutomat){
-            //waiting
-            case WAIT:  break;
-            //checking
-            case CHECK: checkMoney();   break;
-            //cooling drink
-            case COOK:  cookDrink();    break;
-            default:    break;
-        }
-    }
-    private void checkMoney(){
-        //проверить хватает ли на счете денег
-        double price =drinks.get(indexSelectedDrink).getCost();
-        if (price <= cash) pay(price);
-    }
-
-    private void cookDrink(){
-        try {
-            Thread.sleep(10000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        complite();
-    }
-
 }
