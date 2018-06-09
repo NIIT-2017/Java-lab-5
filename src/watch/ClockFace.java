@@ -3,6 +3,7 @@ package watch;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 import javafx.scene.transform.Affine;
 
 import java.time.LocalTime;
@@ -13,6 +14,7 @@ public class ClockFace extends Canvas implements Runnable {
     ClockFace(double width, double height) {
         super(width, height);
         gc = this.getGraphicsContext2D();
+
         Thread thread = new Thread(this);
         thread.setDaemon(true);
         thread.start();
@@ -27,6 +29,7 @@ public class ClockFace extends Canvas implements Runnable {
             e.printStackTrace();
         }
     }
+
 
     void repaint() {
         //diametr
@@ -59,16 +62,18 @@ public class ClockFace extends Canvas implements Runnable {
 
         //line
         gc.setStroke(Color.WHITE);
-        for (int i = 0; i < 60; i++) {
+        for (int i = 0; i < 12; i++) {
             if (i%3==0) {
                 gc.setLineWidth(R*0.02);
-                gc.strokeLine(0,R*0.8,0,R);
+                gc.strokeLine(0,R*0.9,0,R);
             }
             else
                 gc.setLineWidth(R*0.01);
-                gc.strokeLine(0,R*0.9,0,R);
+                gc.strokeLine(0,R*0.95,0,R);
             gc.rotate(30);
         }
+
+        paintText(R*0.75);
 
         //line second
         gc.setLineWidth(2);
@@ -97,6 +102,19 @@ public class ClockFace extends Canvas implements Runnable {
         gc.fillOval(-R*0.025,-R*0.025,R*0.05,R*0.05);
 
         //recovery transform
+        gc.setTransform(affine);
+    }
+
+    private void paintText(double R) {
+        Affine affine = gc.getTransform();
+        gc.translate(-0.1*R,0.1*R);
+        gc.setFill(Color.rgb(155,137,133));
+        gc.setFont(Font.font(R*0.3));
+        for (int i = 1; i <= 12; i++) {
+
+            double angel = i*Math.PI/6-Math.PI/2;
+            gc.fillText(String.valueOf(i),R*Math.cos(angel),R*Math.sin(angel));
+        }
         gc.setTransform(affine);
     }
 }
