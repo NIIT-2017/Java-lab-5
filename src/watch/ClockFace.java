@@ -10,10 +10,9 @@ import java.time.LocalTime;
 public class ClockFace extends Canvas implements Runnable {
     private GraphicsContext gc;
 
-    public ClockFace(double width, double height) {
+    ClockFace(double width, double height) {
         super(width, height);
         gc = this.getGraphicsContext2D();
-//        gc.translate(150,150);///////////////////
         Thread thread = new Thread(this);
         thread.setDaemon(true);
         thread.start();
@@ -21,17 +20,15 @@ public class ClockFace extends Canvas implements Runnable {
 
     @Override
     public void run() {
-        for (; ; ) {
-            try {
-                Thread.sleep(1000);
-                repaint();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+        while (true) try {
+            Thread.sleep(1000);
+            repaint();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
     }
 
-    public void repaint() {
+    void repaint() {
         //diametr
         double R = Math.min(this.getHeight(), this.getWidth())/2;
 
@@ -47,7 +44,7 @@ public class ClockFace extends Canvas implements Runnable {
         double angelHour   = -90+30.0*(minute/60.0+hour);
 
         //clear
-        gc.setFill(Color.STEELBLUE);
+        gc.setFill(Color.rgb(25,25,60));
         gc.fillRect(0,0,this.getWidth(),this.getHeight());
 
         //circle
