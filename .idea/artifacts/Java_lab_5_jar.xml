@@ -2,7 +2,7 @@
   <artifact type="jar" build-on-make="true" name="Java-lab-5:jar">
     <output-path>$PROJECT_DIR$/out/artifacts/Java_lab_5_jar</output-path>
     <root id="archive" name="Java-lab-5.jar">
-      <element id="module-output" name="Java-lab-5" />
+      <element id="module-output" name="AutomatGUI" />
     </root>
   </artifact>
 </component>
