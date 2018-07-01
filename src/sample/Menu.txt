@@ -1,4 +1,0 @@
-'Coffee Espresso'	'9.55'
-'Coffee Americano'	'12.69'
-'Coffee Cappuccino'	'16.89'
-'Coffee Glasses'	'19.49'
