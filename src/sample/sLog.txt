@@ -1,0 +1,10 @@
+<2018.07.01 20:55:27> <state:OFF> <command:START> <cash:0,00>
+<2018.07.01 20:55:35> <state:WAIT> <command:COIN> <cash:0,50>
+<2018.07.01 20:55:40> <state:ACCEPT> <command:COIN> <cash:10,50>
+<2018.07.01 20:55:44> <state:ACCEPT> <command:DRINK> <cash:10,50>
+<2018.07.01 20:55:45> <state:CHECK> <command:CHECKFALSE> <cash:10,50>
+<2018.07.01 20:55:47> <state:ACCEPT> <command:DRINK> <cash:10,50>
+<2018.07.01 20:55:48> <state:CHECK> <command:CHECKTRUE> <cash:0,95>
+<2018.07.01 20:55:58> <state:COOK> <command:COOKFINISH> <cash:0,95>
+<2018.07.01 20:56:17> <state:ACCEPT> <command:CHANGE> <cash:0,00>
+<2018.07.01 20:56:21> <state:WAIT> <command:EXIT> <cash:0,00>
