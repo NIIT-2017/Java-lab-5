@@ -1,0 +1,55 @@
+#face {
+  -fx-fill: radial-gradient(radius 180%, burlywood, derive(burlywood, -30%), derive(burlywood, 30%));
+  -fx-stroke: derive(green, -15%);
+  -fx-stroke-width: 5;
+  -fx-effect: dropshadow(three-pass-box, grey, 10, 0, 4, 4);
+  -fx-fill: linear-gradient(to bottom, aquamarine,mediumturquoise);
+}
+
+#label {
+  -fx-font-size: 19px;
+  -fx-font-weight: bold;
+  -fx-font-family: 'Helvetica';
+}
+
+
+#hourHand {
+  -fx-stroke: darkslategray;
+  -fx-stroke-width: 4;
+  -fx-stroke-line-cap: round;
+}
+
+#minuteHand {
+  -fx-stroke: derive(darkslategray, -5%);
+  -fx-stroke-width: 3;
+  -fx-stroke-line-cap: round;
+}
+
+#secondHand {
+  -fx-stroke: derive(firebrick, -15%);
+  -fx-stroke-width: 2;
+  -fx-stroke-line-cap: round;
+}
+
+#spindle {
+  -fx-fill: derive(darkslategray, +5%);
+}
+
+#tick {
+  -fx-stroke: derive(darkgoldenrod, -15%);
+  -fx-stroke-width: 3;
+  -fx-stroke-line-cap: round;
+}
+
+#layout {
+  -fx-padding: 7;
+}
+
+#clocks {
+  -fx-padding: 5;
+}
+
+#backdrop {
+  -fx-background-color: linear-gradient(to top, aquamarine,chartreuse);
+  -fx-effect: dropshadow(three-pass-box, GreenYellow, 10, 0, 0, 0);
+}
