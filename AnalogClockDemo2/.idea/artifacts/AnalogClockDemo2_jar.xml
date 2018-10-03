@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="AnalogClockDemo2:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/AnalogClockDemo2_jar</output-path>
+    <root id="archive" name="AnalogClockDemo2.jar">
+      <element id="module-output" name="AnalogClockDemo2" />
+    </root>
+  </artifact>
+</component>
