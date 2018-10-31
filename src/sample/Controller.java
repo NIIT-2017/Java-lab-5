@@ -38,6 +38,26 @@ public class Controller {
         txtDisplay.setText(String.valueOf(a.printState()));
     }
 
+    public void onPower(){
+        txtDisplay.setText(String.valueOf(a.on()));
+    }
 
+    public void onCash(){
+        txtDisplay.setText(String.valueOf(a.coin(Integer.parseInt(txt_cashDisplay.getText()))));
+    }
+
+    public void onAmericano(){
+        txtDisplay.setText(String.valueOf(a.choice(0)));
+    }
+    public void onEspresso(){
+        txtDisplay.setText(String.valueOf(a.choice(1)));
+    }
+    public void onMocha(){
+        txtDisplay.setText(String.valueOf(a.choice(2)));
+    }
+
+    public void onCancel(){
+        txt_moneyback.setText(String.valueOf(a.cancel()));
+    }
 
 }

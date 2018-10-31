@@ -30,7 +30,8 @@ public class Automata {
                 state = STATES.WAIT;
                 break;
             case WAIT:
-                break;
+                state = STATES.OFF;
+                //break;
             case ACCEPT:
                 break;
             case CHECK:
@@ -97,7 +98,7 @@ public class Automata {
                 printmenu+=String.format("%-25s %d\n",menu[i],prices[i]);
                             }
         }
-        System.out.println(printmenu);
+        //System.out.println(printmenu);
         return printmenu;
     }
 
