@@ -43,8 +43,12 @@ public class Controller {
     }
 
     public void onCash(){
+        try {
         txtDisplay.setText(String.valueOf(a.coin(Integer.parseInt(txt_cashDisplay.getText()))));
-        txt_cashDisplay.setText("");
+        txt_cashDisplay.setText("");}
+        catch (NumberFormatException e) {
+            System.out.println("Wrong value!!!");
+        }
     }
 
     public void onAmericano(){
@@ -59,6 +63,7 @@ public class Controller {
 
     public void onCancel(){
         txt_moneyback.setText(String.valueOf(a.cancel()));
+        txtDisplay.setText("");
     }
 
 }
