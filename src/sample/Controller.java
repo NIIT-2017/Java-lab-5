@@ -5,7 +5,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
+
 public class Controller {
+    private Automata a=new Automata(new String[]{"Caffè Americano","Espresso","Caffè Mocha"},new int[]{10,12,15});
 
     @FXML
     private Button bt_cash;
@@ -20,12 +22,22 @@ public class Controller {
     @FXML
     private TextField txt_cashDisplay;
     @FXML
-    private Label txt_display;
+    private Label txtDisplay;
     @FXML
     private Button bt_on;
     @FXML
     private Button bt_printMenu;
     @FXML
     private Button bt_printState;
+
+    public void onPrintMenu(){
+        txtDisplay.setText(a.printMenu());
+    }
+
+    public void onPrintState(){
+        txtDisplay.setText(String.valueOf(a.printState()));
+    }
+
+
 
 }

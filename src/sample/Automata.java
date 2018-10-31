@@ -21,6 +21,7 @@ public class Automata {
     public Automata(String[] menu, int[] prices) {
         this.menu = menu;
         this.prices = prices;
+        this.state = STATES.OFF;
     }
 
     public STATES on() {
@@ -79,13 +80,25 @@ public class Automata {
         return payment;
     }
 
-    public String[][] printMenu() {
-        String[][] menu = new String[this.menu.length][2];
-        for (int i = 0; i < menu.length; i++) {
-            menu[i][0] = this.menu[i];
-            menu[i][1] = String.valueOf(prices[i]);
+    public String printMenu() {
+        String printmenu = "";
+        switch (state) {
+            case OFF:
+                return "";
+            case WAIT:
+                ;
+            case ACCEPT:
+                ;
+            case CHECK:
+                ;
+            case COOK:
+                ;
+            default: for (int i = 0; i < menu.length; i++) {
+                printmenu+=String.format("%-25s %d\n",menu[i],prices[i]);
+                            }
         }
-        return menu;
+        System.out.println(printmenu);
+        return printmenu;
     }
 
     public STATES printState() {
