@@ -44,6 +44,7 @@ public class Controller {
 
     public void onCash(){
         txtDisplay.setText(String.valueOf(a.coin(Integer.parseInt(txt_cashDisplay.getText()))));
+        txt_cashDisplay.setText("");
     }
 
     public void onAmericano(){
