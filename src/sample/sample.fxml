@@ -90,7 +90,7 @@
             <Button layoutX="301.0" layoutY="186.0" mnemonicParsing="false" onAction="#onCancel" prefHeight="25.0" prefWidth="104.0" text="Cancel" />
             <Button fx:id="bt_takeMoney" layoutX="302.0" layoutY="655.0" mnemonicParsing="false" onAction="#onTakeMoney" prefHeight="25.0" prefWidth="103.0" text="Take a money" />
             <Circle fx:id="shape_pwr" fill="#ff1f1f" layoutX="36.0" layoutY="635.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
-            <ProgressIndicator fx:id="shape_progress" layoutX="152.0" layoutY="635.0" progress="0.0" />
+            <ProgressIndicator fx:id="shape_progress" layoutX="134.0" layoutY="626.0" prefHeight="49.0" prefWidth="53.0" progress="0.0" visible="false" />
             <Button fx:id="bt_cook" layoutX="302.0" layoutY="359.0" mnemonicParsing="false" onAction="#onCook" prefHeight="49.0" prefWidth="103.0" text="Cook" />
          </children>
       </Pane>

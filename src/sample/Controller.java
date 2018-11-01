@@ -1,5 +1,6 @@
 package sample;
 
+import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -14,8 +15,9 @@ import java.util.ResourceBundle;
 
 
 public class Controller implements Initializable {
+    private Task copyWorker;
     private Automata a = new Automata(new String[]{"Caffè Americano", "Espresso", "Caffè Mocha"},
-                                      new int[]{10, 12, 15});
+            new int[]{10, 12, 15});
     @FXML
     private Button bt_cash;
     @FXML
@@ -43,14 +45,14 @@ public class Controller implements Initializable {
     @FXML
     private Circle shape_pwr;
     @FXML
-    private ProgressIndicator shape_progress = new ProgressIndicator();
+    private ProgressIndicator shape_progress;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         txtDisplay.setText(String.valueOf(a.printState()));
         txt_cashDisplay.setText("0");
         txt_moneyback.setText("0");
-        shape_progress.setProgress(0);
+        shape_progress.setProgress(0.0);
     }
 
     public void onPrintMenu() {
@@ -72,6 +74,7 @@ public class Controller implements Initializable {
             txtDisplay.setText(String.valueOf(
                     a.getCash() == 0 ? txtDisplay.getText() : a.getCash()));
             txt_cashDisplay.setText("0");
+            shape_progress.setVisible(false);
         } catch (NumberFormatException e) {
             txt_cashDisplay.setText("Wrong!!!");
         }
@@ -89,14 +92,17 @@ public class Controller implements Initializable {
         txtDisplay.setText(String.valueOf(a.choice(2)));
     }
 
-    public void onCook() throws InterruptedException {
-        for (int i=0;i<=100;i++){
-                //Thread.sleep(25);
-                System.out.println(i);
-                shape_progress.setProgress(i / 100.0);
-            Thread.sleep(25);
-                }
+    public void onCook() {
+
+        copyWorker = createWorker();
+        //shape_progress.setProgress(0.0);
+        shape_progress.progressProperty().unbind();
+        shape_progress.progressProperty().bind(copyWorker.progressProperty());
+        shape_progress.setVisible(true);
+        Thread t = new Thread(copyWorker);
+        t.start();
         txtDisplay.setText(String.valueOf(a.cook()));
+        txt_moneyback.setText(String.valueOf(a.finish()));
     }
 
     public void onCancel() {
@@ -106,5 +112,19 @@ public class Controller implements Initializable {
 
     public void onTakeMoney() {
         txt_moneyback.setText("0");
+    }
+
+    public Task createWorker() {
+        return new Task() {
+            @Override
+            protected Object call() throws Exception {
+                for (int i = 0; i < 100; i++) {
+                    Thread.sleep(25);
+                    updateProgress(i + 1, 100);
+                    //System.out.println(shape_progress.getProgress());
+                }
+                return true;
+            }
+        };
     }
 }
