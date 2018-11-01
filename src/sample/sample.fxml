@@ -25,9 +25,9 @@
    <children>
       <Pane prefHeight="735.0" prefWidth="410.0" style="-fx-background-color: rgb(10,10,10);">
          <children>
-            <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#ffffff00" height="112.0" layoutX="38.0" layoutY="445.0" stroke="WHITE" strokeType="INSIDE" width="255.0" />
-            <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#ffffff00" height="112.0" layoutX="38.0" layoutY="215.0" stroke="WHITE" strokeType="INSIDE" width="255.0" />
-            <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#ffffff00" height="112.0" layoutX="38.0" layoutY="330.0" stroke="WHITE" strokeType="INSIDE" width="255.0" />
+            <Rectangle arcHeight="10.0" arcWidth="20.0" fill="#ffffff00" height="112.0" layoutX="38.0" layoutY="445.0" stroke="WHITE" strokeType="INSIDE" width="255.0" />
+            <Rectangle arcHeight="10.0" arcWidth="20.0" fill="#ffffff00" height="112.0" layoutX="38.0" layoutY="215.0" stroke="WHITE" strokeType="INSIDE" width="255.0" />
+            <Rectangle arcHeight="10.0" arcWidth="20.0" fill="#ffffff00" height="112.0" layoutX="38.0" layoutY="330.0" stroke="WHITE" strokeType="INSIDE" width="255.0" />
             <Button fx:id="bt_espresso" layoutX="173.0" layoutY="374.0" mnemonicParsing="false" onAction="#onEspresso" prefHeight="25.0" prefWidth="104.0" text="Espresso" />
             <Button fx:id="bt_mocha" layoutX="173.0" layoutY="489.0" mnemonicParsing="false" onAction="#onMocha" prefHeight="25.0" prefWidth="104.0" text="Caffè Mocha" />
             <Button fx:id="bt_americano" layoutX="173.0" layoutY="259.0" mnemonicParsing="false" onAction="#onAmericano" prefHeight="25.0" prefWidth="104.0" text="Caffè Americano" />
@@ -69,19 +69,29 @@
                   </LinearGradient>
                </fill>
             </Rectangle>
-            <TextField fx:id="txt_cashDisplay" layoutX="301.0" layoutY="42.0" prefHeight="25.0" prefWidth="103.0" />
-            <TextField fx:id="txt_moneyback" alignment="CENTER" layoutX="301.0" layoutY="655.0" onAction="#onCancel" prefHeight="25.0" prefWidth="103.0" text="Moneyback" />
+            <TextField fx:id="txt_cashDisplay" alignment="CENTER" layoutX="301.0" layoutY="42.0" prefHeight="25.0" prefWidth="103.0">
+               <font>
+                  <Font name="Consolas" size="12.0" />
+               </font></TextField>
+            <TextField fx:id="txt_moneyback" alignment="CENTER" layoutX="301.0" layoutY="622.0" onAction="#onCancel" prefHeight="25.0" prefWidth="103.0">
+               <font>
+                  <Font name="Consolas" size="12.0" />
+               </font></TextField>
             <Button fx:id="bt_cash" layoutX="301.0" layoutY="80.0" mnemonicParsing="false" onAction="#onCash" prefHeight="25.0" prefWidth="103.0" text="Cash" />
-            <Rectangle arcHeight="20.0" arcWidth="20.0" fill="WHITE" height="104.0" layoutX="86.0" layoutY="603.0" stroke="BLACK" strokeType="INSIDE" width="160.0" />
+            <Rectangle arcHeight="20.0" arcWidth="20.0" fill="WHITE" height="104.0" layoutX="86.0" layoutY="603.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: rgb(200,200,200);" width="160.0" />
             <Button fx:id="bt_printMenu" layoutX="301.0" layoutY="116.0" mnemonicParsing="false" onAction="#onPrintMenu" prefHeight="25.0" prefWidth="104.0" text="Print Menu" />
             <Button fx:id="bt_printState" layoutX="301.0" layoutY="150.0" mnemonicParsing="false" onAction="#onPrintState" prefHeight="25.0" prefWidth="104.0" text="Print State" />
-            <Button fx:id="bt_on" layoutX="6.0" layoutY="655.0" mnemonicParsing="false" onAction="#onPower" prefHeight="25.0" prefWidth="61.0" text="ON/OFF" />
+            <Button fx:id="bt_on" layoutX="8.0" layoutY="655.0" mnemonicParsing="false" onAction="#onPower" prefHeight="25.0" prefWidth="61.0" text="On/Off" />
             <Label fx:id="txtDisplay" layoutX="57.0" layoutY="14.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="172.0" prefWidth="218.0" textFill="WHITE" textOverrun="CLIP" wrapText="true">
                <font>
-                  <Font name="Consolas" size="13.0" />
+                  <Font name="Consolas" size="12.0" />
                </font>
             </Label>
             <Button layoutX="301.0" layoutY="186.0" mnemonicParsing="false" onAction="#onCancel" prefHeight="25.0" prefWidth="104.0" text="Cancel" />
+            <Button fx:id="bt_takeMoney" layoutX="302.0" layoutY="655.0" mnemonicParsing="false" onAction="#onTakeMoney" prefHeight="25.0" prefWidth="103.0" text="Take a money" />
+            <Circle fx:id="shape_pwr" fill="#ff1f1f" layoutX="36.0" layoutY="635.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+            <ProgressIndicator fx:id="shape_progress" layoutX="152.0" layoutY="635.0" progress="0.0" />
+            <Button fx:id="bt_cook" layoutX="302.0" layoutY="359.0" mnemonicParsing="false" onAction="#onCook" prefHeight="49.0" prefWidth="103.0" text="Cook" />
          </children>
       </Pane>
    </children>

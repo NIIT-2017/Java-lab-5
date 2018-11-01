@@ -8,6 +8,9 @@ package sample;
  * To change this template use File | Settings | File Templates.
  */
 public class Automata {
+    private final String NEED_MONEY = "Please add a coin...";
+    private final String TOO_LITTLE_MONEY = "Too little money for your choice...";
+    private final String ENJOY = "Enjoy your drink...";
     private int cash;
     private int payment;
     private int moneyback;
@@ -15,8 +18,6 @@ public class Automata {
     private int[] prices;
     private String[] menu;
     private STATES state = STATES.OFF;
-    private final String TOO_LITTLE_MONEY = "Too little money for your choice...";
-    private final String ENJOY = "Enjoy your drink...";
 
     public Automata(String[] menu, int[] prices) {
         this.menu = menu;
@@ -85,20 +86,12 @@ public class Automata {
         String printmenu = "";
         switch (state) {
             case OFF:
-                return "";
-            case WAIT:
-                ;
-            case ACCEPT:
-                ;
-            case CHECK:
-                ;
-            case COOK:
-                ;
-            default: for (int i = 0; i < menu.length; i++) {
-                printmenu+=String.format("%-25s %d\n",menu[i],prices[i]);
-                            }
+                return printmenu;
+            default:
+                for (int i = 0; i < menu.length; i++) {
+                    printmenu += String.format("%-25s %d\n", menu[i], prices[i]);
+                }
         }
-        //System.out.println(printmenu);
         return printmenu;
     }
 
@@ -108,22 +101,19 @@ public class Automata {
 
     public String choice(int choice) {
         this.choice = choice;
-        String result = TOO_LITTLE_MONEY;
+        String result = NEED_MONEY;
         switch (state) {
-            case OFF:
-                break;
             case WAIT:
+                result = NEED_MONEY;
                 break;
             case ACCEPT:
                 if (check()) {
                     state = STATES.CHECK;
                     result = (menu[choice]);
-                }
+                } else result = NEED_MONEY;
                 break;
-            case CHECK:
-                break;
-            case COOK:
-                break;
+            default:
+                return String.valueOf(state);
         }
         return result;
     }
@@ -133,6 +123,7 @@ public class Automata {
     }
 
     public int cancel() {
+        int tmp = 0;
         switch (state) {
             case OFF:
                 break;
@@ -153,7 +144,9 @@ public class Automata {
             case COOK:
                 break;
         }
-        return moneyback;
+        tmp = moneyback;
+        moneyback = 0;
+        return tmp;
     }
 
     public int getCash() {
@@ -161,20 +154,15 @@ public class Automata {
     }
 
     public String cook() {
-        String result = TOO_LITTLE_MONEY;
+        String result = NEED_MONEY;
         switch (state) {
-            case OFF:
-                break;
-            case WAIT:
-                break;
-            case ACCEPT:
-                break;
+            case WAIT: return result;
             case CHECK:
                 state = STATES.COOK;
                 result = ENJOY;
                 break;
-            case COOK:
-                break;
+            default:
+                return String.valueOf(state);
         }
         return result;
     }
