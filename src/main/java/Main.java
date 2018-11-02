@@ -12,11 +12,9 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        System.out.println(System.getProperty("user.dir"));
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("sample.fxml"));
         primaryStage.setTitle("AutomataGUI");
         primaryStage.setScene(new Scene(root, 410, 735));
         primaryStage.show();
-
     }
 }
