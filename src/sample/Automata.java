@@ -79,7 +79,7 @@ public class Automata {
             case COOK:
                 break;
         }
-        return payment;
+        return this.payment;
     }
 
     public String printMenu() {
@@ -112,8 +112,11 @@ public class Automata {
                     result = (menu[choice]);
                 } else result = NEED_MONEY;
                 break;
+            case OFF:
+                result = String.valueOf(STATES.OFF);
+                break;
             default:
-                return String.valueOf(state);
+                return result;
         }
         return result;
     }
@@ -168,7 +171,7 @@ public class Automata {
     }
 
     public int finish() {
-        int result = -1;
+        int result = 0;
         switch (state) {
             case OFF:
                 break;

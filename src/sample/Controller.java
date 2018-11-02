@@ -15,9 +15,9 @@ import java.util.ResourceBundle;
 
 
 public class Controller implements Initializable {
-    private Task copyWorker;
+    private Task cookProgress;
     private Automata a = new Automata(new String[]{"Caffè Americano", "Espresso", "Caffè Mocha"},
-            new int[]{10, 12, 15});
+                                      new int[]{10, 12, 15});
     @FXML
     private Button bt_cash;
     @FXML
@@ -42,6 +42,8 @@ public class Controller implements Initializable {
     private Button bt_takeMoney;
     @FXML
     private Button bt_cook;
+    @FXML
+    private Button bt_finish;
     @FXML
     private Circle shape_pwr;
     @FXML
@@ -69,11 +71,13 @@ public class Controller implements Initializable {
     }
 
     public void onCash() {
+        int tmp = 0;
         try {
-            a.coin(Integer.parseInt(txt_cashDisplay.getText()));
-            txtDisplay.setText(String.valueOf(
-                    a.getCash() == 0 ? txtDisplay.getText() : a.getCash()));
-            txt_cashDisplay.setText("0");
+            tmp = a.coin(Integer.parseInt(txt_cashDisplay.getText()));
+            if (tmp != 0) {
+                txtDisplay.setText(txt_cashDisplay.getText());
+                txt_cashDisplay.setText("0");
+            }
             shape_progress.setVisible(false);
         } catch (NumberFormatException e) {
             txt_cashDisplay.setText("Wrong!!!");
@@ -94,15 +98,26 @@ public class Controller implements Initializable {
 
     public void onCook() {
 
-        copyWorker = createWorker();
+        cookProgress = cookProgress();
         //shape_progress.setProgress(0.0);
         shape_progress.progressProperty().unbind();
-        shape_progress.progressProperty().bind(copyWorker.progressProperty());
-        shape_progress.setVisible(true);
-        Thread t = new Thread(copyWorker);
-        t.start();
-        txtDisplay.setText(String.valueOf(a.cook()));
+        shape_progress.progressProperty().bind(cookProgress.progressProperty());
+
+        cookProgress.messageProperty()
+                .addListener((observable, oldValue, newValue) ->
+                                     txtDisplay.setText(newValue)
+                );
+        if (a.printState() == STATES.CHECK) {
+            shape_progress.setVisible(true);
+            Thread t = new Thread(cookProgress);
+            t.start();
+        } else txtDisplay.setText(String.valueOf(a.cook()));
+    }
+
+    public void onFinish() {
         txt_moneyback.setText(String.valueOf(a.finish()));
+        shape_progress.setVisible(false);
+        txtDisplay.setText(String.valueOf(a.printState()));
     }
 
     public void onCancel() {
@@ -114,15 +129,15 @@ public class Controller implements Initializable {
         txt_moneyback.setText("0");
     }
 
-    public Task createWorker() {
+    public Task cookProgress() {
         return new Task() {
             @Override
             protected Object call() throws Exception {
                 for (int i = 0; i < 100; i++) {
                     Thread.sleep(25);
                     updateProgress(i + 1, 100);
-                    //System.out.println(shape_progress.getProgress());
                 }
+                updateMessage(String.valueOf(a.cook()));
                 return true;
             }
         };
