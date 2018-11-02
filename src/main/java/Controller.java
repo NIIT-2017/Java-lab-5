@@ -1,5 +1,3 @@
-package sample;
-
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;

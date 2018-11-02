@@ -1,12 +1,3 @@
-package sample;
-
-/**
- * Created with IntelliJ IDEA.
- * User: Konstantin
- * Date: 29.09.18
- * Time: 12:14
- * To change this template use File | Settings | File Templates.
- */
 public class Automata {
     private final String NEED_MONEY = "Please add a coin...";
     private final String TOO_LITTLE_MONEY = "Too little money for your choice...";
