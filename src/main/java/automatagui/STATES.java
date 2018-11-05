@@ -1,3 +1,4 @@
+package automatagui;
 
 public enum STATES {
     OFF,

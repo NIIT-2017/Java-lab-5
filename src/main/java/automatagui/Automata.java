@@ -1,3 +1,4 @@
+package automatagui;
 public class Automata {
     private final String NEED_MONEY = "Please add a coin...";
     private final String TOO_LITTLE_MONEY = "Too little money for your choice...";

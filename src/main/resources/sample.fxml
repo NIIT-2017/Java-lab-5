@@ -15,7 +15,7 @@
 <?import javafx.scene.control.Label?>
 <?import com.sun.deploy.uitoolkit.impl.fx.ui.UITextArea?>
 
-<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="automatagui.Controller">
    <columnConstraints>
       <ColumnConstraints />
    </columnConstraints>
@@ -96,7 +96,7 @@
             <Button fx:id="bt_finish" layoutX="302.0" layoutY="399.0" mnemonicParsing="false" onAction="#onFinish" prefHeight="25.0" prefWidth="103.0" text="Finish" />
             <ImageView fitHeight="49.0" fitWidth="61.0" layoutX="138.0" layoutY="14.0" preserveRatio="true">
                <image>
-                  <Image url="@Jofemar-Logo.jpg" />
+                  <Image url="@Jofemar-Logo.png" />
                </image>
             </ImageView>
          </children>
