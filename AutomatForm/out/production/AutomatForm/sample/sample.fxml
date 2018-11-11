@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="330.0" prefWidth="575.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <HBox layoutY="257.0" prefHeight="71.0" prefWidth="200.0">
+         <children>
+            <Button fx:id="btn_Cook" alignment="CENTER" mnemonicParsing="false" prefHeight="38.0" prefWidth="133.0" text="Приготовить" textAlignment="CENTER">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="33.0" top="17.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <VBox layoutX="203.0" prefHeight="183.0" prefWidth="354.0">
+         <children>
+            <Label fx:id="lbl_Cash" alignment="TOP_CENTER" text="Status" textAlignment="CENTER">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets left="150.0" />
+               </VBox.margin></Label>
+            <TextField fx:id="txf_State" prefHeight="40.0" prefWidth="241.0" text="Автомат выключен">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+               <cursor>
+                  <Cursor fx:constant="NONE" />
+               </cursor></TextField>
+            <ProgressBar fx:id="prb_Cook" prefHeight="50.0" prefWidth="240.0" progress="0.0">
+               <VBox.margin>
+                  <Insets left="55.0" top="20.0" />
+               </VBox.margin></ProgressBar>
+         </children>
+         <padding>
+            <Insets top="15.0" />
+         </padding>
+      </VBox>
+      <VBox layoutY="54.0" prefHeight="197.0" prefWidth="200.0">
+         <children>
+            <ListView fx:id="lv_Menu" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="179.0" prefWidth="170.0" />
+            <HBox prefHeight="33.0" prefWidth="170.0">
+               <children>
+                  <Button fx:id="btn_Menu" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Меню">
+                     <HBox.margin>
+                        <Insets right="15.0" top="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btn_Choice" mnemonicParsing="false" prefHeight="25.0" prefWidth="86.0" text="Выбрать">
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+         </children>
+         <padding>
+            <Insets left="15.0" right="15.0" />
+         </padding>
+      </VBox>
+      <VBox layoutX="199.0" layoutY="186.0" prefHeight="83.0" prefWidth="354.0">
+         <children>
+            <Label text="Cash">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="160.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="txF_Money" alignment="CENTER" maxWidth="-Infinity" prefHeight="40.0" prefWidth="270.0">
+               <VBox.margin>
+                  <Insets left="45.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="24.0" />
+               </font></TextField>
+         </children>
+      </VBox>
+      <HBox layoutY="1.0" prefHeight="40.0" prefWidth="200.0">
+         <children>
+            <Button fx:id="btn_Power" mnemonicParsing="false" text="Включить">
+               <HBox.margin>
+                  <Insets right="15.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="btn_PowerOff" mnemonicParsing="false" text="Выключить" />
+         </children>
+         <padding>
+            <Insets left="19.0" right="15.0" top="15.0" />
+         </padding>
+      </HBox>
+      <HBox layoutX="199.0" layoutY="277.0" prefHeight="45.0" prefWidth="354.0">
+         <children>
+            <Button fx:id="btn_Add" mnemonicParsing="false" text="Внести">
+               <HBox.margin>
+                  <Insets right="15.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="btn_Cancel" mnemonicParsing="false" text="Вернуть" />
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="110.0" right="70.0" top="10.0" />
+         </padding>
+      </HBox>
+   </children>
+</Pane>
