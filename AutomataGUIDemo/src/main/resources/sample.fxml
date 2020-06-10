@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="850.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <HBox layoutY="-1.0" prefHeight="850.0" prefWidth="700.0">
+         <children>
+            <VBox prefHeight="833.0" prefWidth="437.0">
+               <children>
+                  <HBox prefHeight="315.0" prefWidth="429.0">
+                     <children>
+                        <ImageView fitHeight="336.0" fitWidth="438.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@top2.jpg" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="6.0" right="6.0" top="6.0" />
+                           </HBox.margin>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <ProgressBar fx:id="progressBar" prefHeight="18.0" prefWidth="442.0" progress="0.0">
+                     <VBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </VBox.margin>
+                  </ProgressBar>
+                  <GridPane fx:id="gridPane" prefHeight="488.0" prefWidth="427.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="138.0" minWidth="10.0" prefWidth="132.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="82.0" minWidth="10.0" prefWidth="82.0" />
+                        <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" maxWidth="82.0" minWidth="10.0" prefWidth="82.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="135.0" minWidth="10.0" prefWidth="135.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="80.0" minHeight="10.0" prefHeight="80.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="80.0" minHeight="10.0" prefHeight="80.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="80.0" minHeight="10.0" prefHeight="80.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="80.0" minHeight="10.0" prefHeight="80.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="80.0" minHeight="10.0" prefHeight="85.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="80.0" minHeight="10.0" prefHeight="101.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <VBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </VBox.margin>
+                     <children>
+                        <Button fx:id="btn11" mnemonicParsing="false" onAction="#btn11Click" prefHeight="80.0" prefWidth="82.0" GridPane.columnIndex="1">
+                           <GridPane.margin>
+                              <Insets bottom="1.0" right="2.0" top="1.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <Button fx:id="btn12" mnemonicParsing="false" onAction="#btn12Click" prefHeight="80.0" prefWidth="81.0" GridPane.columnIndex="2">
+                           <GridPane.margin>
+                              <Insets bottom="1.0" left="2.0" top="1.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label fx:id="label111" alignment="BOTTOM_CENTER" prefHeight="40.0" prefWidth="131.0" text="Label">
+                                 <VBox.margin>
+                                    <Insets left="2.0" right="2.0" top="2.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font name="Magneto Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="label112" alignment="TOP_CENTER" prefHeight="41.0" prefWidth="132.0" text="Label">
+                                 <VBox.margin>
+                                    <Insets bottom="2.0" left="2.0" right="2.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font name="Magneto Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <Button fx:id="btn21" mnemonicParsing="false" onAction="#btn21Click" prefHeight="80.0" prefWidth="82.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets bottom="1.0" right="2.0" top="1.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <Button fx:id="btn22" mnemonicParsing="false" onAction="#btn22Click" prefHeight="80.0" prefWidth="82.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets bottom="1.0" left="2.0" top="1.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3">
+                           <children>
+                              <Label fx:id="label121" alignment="BOTTOM_CENTER" prefHeight="40.0" prefWidth="146.0" text="Label">
+                                 <font>
+                                    <Font name="Magneto Bold" size="18.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="2.0" right="2.0" top="2.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="label122" alignment="TOP_CENTER" prefHeight="40.0" prefWidth="134.0" text="Label">
+                                 <font>
+                                    <Font name="Magneto Bold" size="16.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="2.0" left="2.0" right="2.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
+                           <children>
+                              <Label fx:id="label211" alignment="BOTTOM_CENTER" prefHeight="41.0" prefWidth="131.0" text="Label">
+                                 <VBox.margin>
+                                    <Insets left="2.0" right="2.0" top="2.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font name="Magneto Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="label212" alignment="TOP_CENTER" prefHeight="42.0" prefWidth="131.0" text="Label">
+                                 <VBox.margin>
+                                    <Insets bottom="2.0" left="2.0" right="2.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font name="Magneto Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                           <children>
+                              <Label fx:id="label221" alignment="BOTTOM_CENTER" prefHeight="41.0" prefWidth="134.0" text="Label">
+                                 <font>
+                                    <Font name="Magneto Bold" size="18.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="2.0" right="2.0" top="2.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="label222" alignment="TOP_CENTER" prefHeight="46.0" prefWidth="136.0" text="Label">
+                                 <VBox.margin>
+                                    <Insets bottom="2.0" left="2.0" right="2.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font name="Magneto Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <Button fx:id="btn31" mnemonicParsing="false" onAction="#btn31Click" prefHeight="80.0" prefWidth="81.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets bottom="1.0" right="2.0" top="1.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <Button fx:id="btn32" mnemonicParsing="false" onAction="#btn32Click" prefHeight="80.0" prefWidth="81.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets bottom="1.0" left="2.0" top="1.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="2">
+                           <children>
+                              <Label fx:id="label311" alignment="BOTTOM_CENTER" prefHeight="41.0" prefWidth="131.0" text="Label">
+                                 <VBox.margin>
+                                    <Insets left="2.0" right="2.0" top="2.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font name="Magneto Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="label312" alignment="TOP_CENTER" prefHeight="40.0" prefWidth="131.0" text="Label">
+                                 <VBox.margin>
+                                    <Insets bottom="2.0" left="2.0" right="2.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font name="Magneto Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                           <children>
+                              <Label fx:id="label321" alignment="BOTTOM_CENTER" prefHeight="40.0" prefWidth="134.0" text="Label">
+                                 <font>
+                                    <Font name="Magneto Bold" size="18.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="2.0" right="2.0" top="2.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="label322" alignment="TOP_CENTER" prefHeight="43.0" prefWidth="134.0" text="Label">
+                                 <font>
+                                    <Font name="Magneto Bold" size="16.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="2.0" left="2.0" right="2.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <Button fx:id="btn41" mnemonicParsing="false" onAction="#btn41Click" prefHeight="80.0" prefWidth="82.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets bottom="1.0" right="2.0" top="1.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <Button fx:id="btn42" mnemonicParsing="false" onAction="#btn42Click" prefHeight="80.0" prefWidth="81.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets bottom="1.0" left="2.0" top="1.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="3">
+                           <children>
+                              <Label fx:id="label411" alignment="BOTTOM_CENTER" prefHeight="41.0" prefWidth="131.0" text="Label">
+                                 <VBox.margin>
+                                    <Insets left="2.0" right="2.0" top="2.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font name="Magneto Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="label412" alignment="TOP_CENTER" prefHeight="40.0" prefWidth="131.0" text="Label">
+                                 <VBox.margin>
+                                    <Insets bottom="2.0" left="2.0" right="2.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font name="Magneto Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                           <children>
+                              <Label fx:id="label421" alignment="BOTTOM_CENTER" prefHeight="41.0" prefWidth="134.0" text="Label">
+                                 <VBox.margin>
+                                    <Insets left="2.0" right="2.0" top="2.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font name="Magneto Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="label422" alignment="TOP_CENTER" prefHeight="41.0" prefWidth="134.0" text="Label">
+                                 <VBox.margin>
+                                    <Insets bottom="2.0" left="2.0" right="2.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font name="Magneto Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <Button fx:id="btn51" mnemonicParsing="false" onAction="#btn51Click" prefHeight="80.0" prefWidth="81.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                           <GridPane.margin>
+                              <Insets bottom="1.0" right="2.0" top="1.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <Button fx:id="btn52" mnemonicParsing="false" onAction="#btn52Click" prefHeight="80.0" prefWidth="83.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                           <GridPane.margin>
+                              <Insets bottom="1.0" left="2.0" top="1.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <Button fx:id="btn61" mnemonicParsing="false" onAction="#btn61Click" prefHeight="80.0" prefWidth="81.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                           <GridPane.margin>
+                              <Insets bottom="1.0" right="2.0" top="1.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <Button fx:id="btn62" mnemonicParsing="false" onAction="#btn62Click" prefHeight="80.0" prefWidth="85.0" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                           <GridPane.margin>
+                              <Insets bottom="1.0" left="2.0" top="1.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="4">
+                           <children>
+                              <Label fx:id="label511" alignment="BOTTOM_CENTER" prefHeight="40.0" prefWidth="131.0" text="Label">
+                                 <font>
+                                    <Font name="Magneto Bold" size="18.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="2.0" right="2.0" top="2.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="label512" alignment="TOP_CENTER" prefHeight="40.0" prefWidth="131.0" text="Label">
+                                 <font>
+                                    <Font name="Magneto Bold" size="16.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="2.0" left="2.0" right="2.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                           <children>
+                              <Label fx:id="label521" alignment="BOTTOM_CENTER" prefHeight="41.0" prefWidth="134.0" text="Label">
+                                 <font>
+                                    <Font name="Magneto Bold" size="18.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="2.0" right="2.0" top="2.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="label522" alignment="TOP_CENTER" prefHeight="40.0" prefWidth="139.0" text="Label">
+                                 <font>
+                                    <Font name="Magneto Bold" size="16.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="2.0" left="2.0" right="2.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="5">
+                           <children>
+                              <Label fx:id="label611" alignment="BOTTOM_CENTER" prefHeight="40.0" prefWidth="131.0" text="Label">
+                                 <VBox.margin>
+                                    <Insets left="2.0" right="2.0" top="2.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font name="Magneto Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="label612" alignment="TOP_CENTER" prefHeight="42.0" prefWidth="131.0" text="Label">
+                                 <VBox.margin>
+                                    <Insets bottom="2.0" left="2.0" right="2.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font name="Magneto Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.rowIndex="5">
+                           <children>
+                              <Label fx:id="label621" alignment="BOTTOM_CENTER" prefHeight="40.0" prefWidth="134.0" text="Label">
+                                 <VBox.margin>
+                                    <Insets left="2.0" right="2.0" top="2.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font name="Magneto Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="label622" alignment="TOP_CENTER" prefHeight="41.0" prefWidth="134.0" text="Label">
+                                 <VBox.margin>
+                                    <Insets bottom="2.0" left="2.0" right="2.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font name="Magneto Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                  </GridPane>
+               </children>
+            </VBox>
+            <VBox prefHeight="850.0" prefWidth="263.0">
+               <children>
+                  <HBox prefHeight="53.0" prefWidth="262.0">
+                     <children>
+                        <Button fx:id="btnOnOff" mnemonicParsing="false" onAction="#btnOnOffClick" prefHeight="40.0" prefWidth="41.0">
+                           <HBox.margin>
+                              <Insets left="3.0" right="3.0" top="10.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Label prefHeight="40.0" prefWidth="103.0" text="ON / OFF">
+                           <font>
+                              <Font name="Britannic Bold" size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets bottom="3.0" left="5.0" top="10.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Button fx:id="btnComplete" mnemonicParsing="false" onAction="#bntCompleteClick" prefHeight="39.0" prefWidth="95.0" text="Завершить">
+                           <HBox.margin>
+                              <Insets left="3.0" right="3.0" top="10.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Britannic Bold" size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <Label fx:id="lbInstruction" alignment="TOP_LEFT" prefHeight="300.0" prefWidth="245.0" text="Label" textAlignment="JUSTIFY" wrapText="true">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="7.0" right="10.0" top="6.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="Britannic Bold" size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="2.0" left="2.0" right="2.0" />
+                     </padding>
+                  </Label>
+                  <HBox prefHeight="42.0" prefWidth="262.0">
+                     <children>
+                        <TextField fx:id="tfAmount" prefHeight="34.0" prefWidth="166.0">
+                           <HBox.margin>
+                              <Insets left="3.0" right="3.0" top="2.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Britannic Bold" size="14.0" />
+                           </font>
+                        </TextField>
+                        <Button fx:id="btnPay" mnemonicParsing="false" onAction="#bntPayClick" prefHeight="34.0" prefWidth="80.0" text="Внести">
+                           <HBox.margin>
+                              <Insets left="3.0" right="3.0" top="2.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Britannic Bold" size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <Label fx:id="lbMessage" alignment="TOP_LEFT" prefHeight="129.0" prefWidth="262.0" textAlignment="JUSTIFY" wrapText="true">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="6.0" right="10.0" top="6.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="Britannic Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</Pane>
