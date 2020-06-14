@@ -1,0 +1,14 @@
+{
+  "Espresso" : 60,
+  "Espresso large" : 100,
+  "Americano" : 70,
+  "Americano big" : 110,
+  "Cappuccino" : 80,
+  "Cappuccino large" : 140,
+  "Latte" : 85,
+  "Latte large" : 105,
+  "Hot chocolate" : 90,
+  "Hot chocolate big" : 160,
+  "Black tea standard" : 50,
+  "Green tea standard" : 55
+}
