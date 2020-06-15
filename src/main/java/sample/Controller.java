@@ -21,6 +21,7 @@ import java.util.Timer;
 
 public class Controller implements Initializable {
     Automata auto = new Automata();
+
     @FXML
     private Button espresso;
     @FXML
@@ -229,56 +230,59 @@ public class Controller implements Initializable {
     @FXML
     public void clickBuy() throws InterruptedException {
         if ((state.get(auto.getState())).equals("CHECK")) {
-            if (price <= coins) {
-                change = price - coins;
-                if (price < coins)
-                    message.setText("Please, take your change " + change + " rubles.");
-                auto.check();
                 Timer t1 = new Timer();
                 t1.schedule(new AutoTimerTask() {
                     @Override
                     public void run() {
                         System.out.println("AutoTimertask started" + new Date());
                         try {
-                            Thread.sleep(5000);
-                            message.setText("Your drink is cooking, wait please...");
+                            if (price <= coins) {
+                                change = price - coins;
+                                if (change > 0) {
+                                    message.setText("Please, take your change " + change + " rubles.");
+                                }
+                                auto.check();
+                                message.setText("Your drink is cooking, wait please...");
+                                auto.cook();
+                                actualState.setText(state.get(auto.getState()));
+                                Thread.sleep(5000);
+                                message.setText("Please, take your " + drink + " and enjoy it! I hope to see you again!");
+                            } else {
+                            auto.check();
+                            message.setText("Sorry, this amount isn`t enought, take your coins back: " + coins + " rubles");
+                        }
                             Thread.sleep(7000);
                             buyersCoin.clear();
-                            message.setText("Please, take your " + drink + " and enjoy it! I hope to see you again!");
-
+                            message.clear();
+                            coins = 0;
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }
                     }
                 }, 500);
-            } else {
-                message.setText("Sorry, this amount isn`t enought, take your coins back: " + coins + " rubles");
-                auto.check();
-                buyersCoin.clear();
-                coins = 0;
-                message.clear();
-            }
-        }
-        actualState.setText(state.get(auto.getState()));
-    }
-
-    class AutoTimerTask extends TimerTask {
-        @Override
-        public void run() {
-            System.out.println("AutoTimerTask started" + new Date());
-            completeTask();
-            System.out.println("AutoTimerTask finished" + new Date());
-
-        }
-        private void completeTask() {
-            try {
-                Thread.sleep(5000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+            actualState.setText(state.get(auto.getState()));
         }
     }
 
-}
+
+        class AutoTimerTask extends TimerTask {
+            @Override
+            public void run() {
+                System.out.println("AutoTimerTask started" + new Date());
+                completeTask();
+                System.out.println("AutoTimerTask finished" + new Date());
+
+            }
+
+            private void completeTask() {
+                try {
+                    Thread.sleep(5000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+    }
 
 
