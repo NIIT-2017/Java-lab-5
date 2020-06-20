@@ -3,6 +3,9 @@ package automata;
 import org.apache.commons.io.FileUtils;
 import org.json.JSONObject;
 import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -22,13 +25,31 @@ public class Automata {
 
     public void readMenu() {
         try {
-            File file = new File(getClass().getClassLoader().getResource("DrinksAndPrices.json").getFile()
-            );
+            File file = resourcesTofile();
             String stringOfMenu = FileUtils.readFileToString(file, "utf-8");
             menu = new JSONObject(stringOfMenu);
             System.out.println(menu.toString(4));
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
+        }
+    }
+
+    private File resourcesTofile() {
+        try {
+            InputStream inputStream = ClassLoader.getSystemClassLoader().getResourceAsStream("DrinksAndPrices.json");
+            File temporaryFile = File.createTempFile("Temporary", ".tmp");
+            temporaryFile.deleteOnExit();
+            try (FileOutputStream outStream = new FileOutputStream(temporaryFile)) {
+                byte[] buffer = new byte[1024];
+                int bytesRead;
+                while ((bytesRead = inputStream.read(buffer)) != -1) {
+                    outStream.write(buffer, 0, bytesRead);
+                }
+            }
+            return temporaryFile;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
         }
     }
 

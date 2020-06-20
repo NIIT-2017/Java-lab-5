@@ -10,9 +10,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="590.0" style="-fx-background-color: #DEB887;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="590.0" style="-fx-background-color: #DEB887;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
     <children>
-        <VBox alignment="CENTER" prefHeight="600.0" prefWidth="200.0" style="-fx-background-color: #DEB887;">
+        <VBox alignment="CENTER" layoutY="50.0" prefHeight="600.0" prefWidth="199.0" style="-fx-background-color: #DEB887;">
             <children>
                 <Button fx:id="espresso" contentDisplay="CENTER" mnemonicParsing="false" onAction="#clickEspresso" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #EEE8AA;" text="Espresso" textAlignment="CENTER" textFill="#403401" textOverrun="CLIP">
                     <font>
@@ -64,7 +64,7 @@
                 </Button>
             </children>
         </VBox>
-        <VBox layoutX="194.0" prefHeight="600.0" prefWidth="200.0" style="-fx-background-color: #DEB887;">
+        <VBox layoutX="194.0" layoutY="49.0" prefHeight="600.0" prefWidth="200.0" style="-fx-background-color: #DEB887;">
             <children>
                 <TextField fx:id="actualState" alignment="CENTER" prefHeight="87.0" prefWidth="200.0" style="-fx-background-color: #EEE8AA;">
                     <font>
@@ -98,18 +98,7 @@
                   <InnerShadow />
                </effect>
             </Button>
-            <VBox>
-               <children>
-                      <TextField fx:id="message" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #EEE8AA;">
-                          <font>
-                              <Font name="Cambria" size="13.0" />
-                          </font>
-                          <effect>
-                              <InnerShadow />
-                          </effect>
-                      </TextField>
-               </children>
-            </VBox>
+            <VBox />
             <Button fx:id="buy" contentDisplay="CENTER" mnemonicParsing="false" onAction="#clickBuy" prefHeight="46.0" prefWidth="200.0" style="-fx-background-color: #F0E68C;" text="Buy!" textFill="#403401">
                <font>
                   <Font name="Cambria Bold" size="18.0" />
@@ -148,7 +137,7 @@
                 </ImageView>
             </children>
         </VBox>
-        <VBox layoutX="394.0" prefHeight="600.0" prefWidth="200.0" style="-fx-background-color: #DEB887;">
+        <VBox layoutX="394.0" layoutY="50.0" prefHeight="600.0" prefWidth="200.0" style="-fx-background-color: #DEB887;">
             <children>
                 <Button fx:id="latte" contentDisplay="CENTER" mnemonicParsing="false" onAction="#clickLatte" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #EEE8AA;" text="Latte" textAlignment="CENTER" textFill="#403401" textOverrun="CLIP">
                     <font>
@@ -200,5 +189,13 @@
                 </Button>
             </children>
         </VBox>
+          <TextField fx:id="message" alignment="CENTER" layoutX="-2.0" layoutY="-3.0" prefHeight="54.0" prefWidth="595.0" style="-fx-background-color: #EEE8AA;">
+              <font>
+                  <Font name="Cambria Bold" size="17.0" />
+              </font>
+              <effect>
+                  <InnerShadow />
+              </effect>
+          </TextField>
     </children>
 </Pane>

@@ -237,20 +237,21 @@ public class Controller implements Initializable {
                         System.out.println("AutoTimertask started" + new Date());
                         try {
                             if (price <= coins) {
-                                change = price - coins;
+                                change = coins - price;
                                 if (change > 0) {
                                     message.setText("Please, take your change " + change + " rubles.");
                                 }
                                 auto.check();
+                                Thread.sleep(5000);
                                 message.setText("Your drink is cooking, wait please...");
                                 auto.cook();
                                 actualState.setText(state.get(auto.getState()));
                                 Thread.sleep(5000);
                                 message.setText("Please, take your " + drink + " and enjoy it! I hope to see you again!");
                             } else {
-                            auto.check();
-                            message.setText("Sorry, this amount isn`t enought, take your coins back: " + coins + " rubles");
-                        }
+                                auto.check();
+                                message.setText("Sorry, this amount isn`t enought, take your coins back: " + coins + " rubles");
+                            }
                             Thread.sleep(7000);
                             buyersCoin.clear();
                             message.clear();
