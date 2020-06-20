@@ -66,7 +66,6 @@ public class Controller implements Initializable {
     private ImageView picture;
     private String drink;
     private String cash;
-    private String as;
     private int price;
     private int coins;
     private int change;
@@ -88,7 +87,6 @@ public class Controller implements Initializable {
 
     @FXML
     public void clickOn() {
-        System.out.println("clickOn");
         auto.on();
         actualState.setText(state.get(auto.getState()));
         message.setText("Hello! Please, put your money and press \"Put money!\"");
@@ -203,7 +201,7 @@ public class Controller implements Initializable {
     @FXML
     public void clickHotChocolateBig() {
         auto.readMenu();
-        drink = hotChocolate.getText();
+        drink = hotChocolateBig.getText();
         price = auto.choice(drink);
         actualState.setText(state.get(auto.getState()));
         message.setText("The price of your drink is - " + price + " rubles. Please, press buy!");
@@ -228,7 +226,7 @@ public class Controller implements Initializable {
     }
 
     @FXML
-    public void clickBuy() throws InterruptedException {
+    public void clickBuy()  {
         if ((state.get(auto.getState())).equals("CHECK")) {
                 Timer t1 = new Timer();
                 t1.schedule(new AutoTimerTask() {
@@ -265,7 +263,6 @@ public class Controller implements Initializable {
         }
     }
 
-
         class AutoTimerTask extends TimerTask {
             @Override
             public void run() {
@@ -283,7 +280,6 @@ public class Controller implements Initializable {
                 }
             }
         }
-
     }
 
 
