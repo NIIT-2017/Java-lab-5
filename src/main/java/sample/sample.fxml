@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: ~/Desktop/NIIT/java/Labs/lab5/src/main/resources/image~/Desktop/NIIT/java/Labs/lab5/src/main/resources/image/;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../resources/image/coffe.png" />
+         </image>
+      </ImageView>
+      <VBox layoutX="-1.0" prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <HBox prefHeight="66.0" prefWidth="600.0">
+               <children>
+                  <Button fx:id="btnTeaBlackLemon" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: beige;" text="Чай черный с лимоном " textAlignment="CENTER" textOverrun="CLIP" wrapText="true">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="American Typewriter" size="13.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnTeaBlackBerg" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: beige;" text="Чай черный с бергамотом" textAlignment="CENTER" wrapText="true">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="American Typewriter" size="13.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnTeaGreen" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: beige;" text="Чай зеленый" textAlignment="CENTER" wrapText="true">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="American Typewriter" size="13.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnTeaGreenLemon" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: beige;" text="Чай зеленый с лимоном" textAlignment="CENTER" wrapText="true">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="American Typewriter" size="13.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox prefHeight="73.0" prefWidth="600.0">
+               <children>
+                  <Button fx:id="btnCapuchino" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: beige;" text="Капучино" textAlignment="CENTER" wrapText="true">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btnCoffeBlended" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: beige;" text="Кофе зерновой молотый" textAlignment="CENTER" wrapText="true">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btnLatte" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: beige;" text="Латте" textAlignment="CENTER" wrapText="true">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btnCoffeBlendedMilk" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: beige;" text="Кофе молотый с молоком" textAlignment="CENTER" wrapText="true">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox prefHeight="261.0" prefWidth="600.0">
+               <children>
+                  <VBox prefHeight="261.0" prefWidth="578.0">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="24.0" prefWidth="464.0" style="-fx-background-color: beige;" text="Напиток" textAlignment="CENTER" textFill="#1b1b1b" wrapText="true">
+                           <font>
+                              <Font name="American Typewriter" size="18.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </VBox.margin>
+                        </Label>
+                        <TextField fx:id="tfDrink" prefHeight="28.0" prefWidth="368.0">
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <Label alignment="CENTER" prefHeight="30.0" prefWidth="461.0" style="-fx-background-color: beige;" text="Цена" textFill="#030303">
+                           <font>
+                              <Font name="American Typewriter" size="18.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </VBox.margin>
+                        </Label>
+                        <TextField fx:id="tfPrice">
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <HBox prefHeight="113.0" prefWidth="368.0">
+                           <children>
+                              <VBox alignment="CENTER" prefHeight="113.0" prefWidth="187.0">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="28.0" prefWidth="184.0" style="-fx-background-color: beige;" text="Ваш счет">
+                                       <font>
+                                          <Font name="American Typewriter" size="13.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <TextField fx:id="tfScore">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="113.0" prefWidth="286.0">
+                                 <children>
+                                    <TextField fx:id="tfState" alignment="BOTTOM_CENTER">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="261.0" prefWidth="234.0" style="-fx-background-color: beige;">
+                     <children>
+                        <RadioButton fx:id="rbOn" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="35.0" prefWidth="233.0" text="on">
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </VBox.margin>
+                        </RadioButton>
+                        <RadioButton fx:id="rbOff" mnemonicParsing="false" prefHeight="18.0" prefWidth="141.0" text="off">
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </VBox.margin>
+                        </RadioButton>
+                        <Label prefHeight="27.0" prefWidth="118.0" text="Внесите наличные" textAlignment="CENTER" wrapText="true">
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="tfEntScore" prefHeight="16.0" prefWidth="118.0">
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <Button fx:id="btnEnter" mnemonicParsing="false" prefHeight="33.0" prefWidth="132.0" text="Внести">
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button fx:id="btnCancel" mnemonicParsing="false" prefHeight="33.0" prefWidth="129.0" text=" Отмена">
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button fx:id="btnFinish" mnemonicParsing="false" prefHeight="32.0" prefWidth="140.0" text="Завершить">
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button fx:id="btnSurrender" mnemonicParsing="false" prefHeight="37.0" prefWidth="131.0" text="Сдача">
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</Pane>
