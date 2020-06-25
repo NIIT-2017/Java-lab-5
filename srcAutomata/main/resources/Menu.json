@@ -1,0 +1,9 @@
+{
+  "Drinks" :
+  [
+    {"Name" : "Tea","Price" : 10},
+    {"Name" : "Coffee","Price" : 15},
+    {"Name" : "Cappucino","Price" : 20},
+    {"Name" : "Water","Price" : 10}
+  ]
+}
