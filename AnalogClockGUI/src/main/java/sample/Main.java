@@ -2,10 +2,17 @@ package sample;
 
 import javafx.animation.*;
 import javafx.application.Application;
+import javafx.event.Event;
+import javafx.event.EventHandler;
+import javafx.geometry.Pos;
+import javafx.scene.Cursor;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.*;
 import javafx.scene.media.AudioClip;
 import javafx.scene.media.Media;
 import javafx.scene.paint.Color;
@@ -14,12 +21,14 @@ import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 import javafx.scene.transform.Rotate;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javafx.util.Duration;
 
 import java.net.URL;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
+import static javafx.application.Platform.exit;
 import static javafx.scene.media.AudioClip.INDEFINITE;
 
 public class Main extends Application {
@@ -38,25 +47,19 @@ public class Main extends Application {
         URL img = this.getClass().getClassLoader().getResource("backgroundBlack.jpg");
         Image image = new Image(String.valueOf(img), 720, 720, false, false);
         ImageView imageView = new ImageView(image);
-
         URL img2 = this.getClass().getClassLoader().getResource("backHour.jpg");
         Image hour = new Image(String.valueOf(img2), 502, 502, false, false);
-
         URL img3 = this.getClass().getClassLoader().getResource("backMinuteB.jpg");
         Image minute = new Image(String.valueOf(img3), 402, 402, false, false);
-
         URL img4 = this.getClass().getClassLoader().getResource("backSecond.jpg");
         Image second = new Image(String.valueOf(img4), 302, 302, false, false);
 
         Circle hourImage = new Circle (357,357,251);
         hourImage.setFill(new ImagePattern(hour));
-
         Circle minuteImage = new Circle (357,357,201);
         minuteImage.setFill(new ImagePattern(minute));
-
         Circle secondImage = new Circle (357,357,151);
         secondImage.setFill(new ImagePattern(second));
-
 
         Circle circle1 = new Circle (357,357,252);
         circle1.setFill(new ImagePattern(image));
@@ -145,7 +148,7 @@ public class Main extends Application {
         Calendar calendar = GregorianCalendar.getInstance();
 
         double seedSecondDegrees  = calendar.get(Calendar.SECOND) * (360 / 60);
-        double seedSecondDegrees2  = (60-calendar.get(Calendar.SECOND)) * (360 / 60);
+        double seedSecondDegrees2  = (60-calendar.get(Calendar.SECOND)) * (-360 / 60);
         double seedMinuteDegrees  = (calendar.get(Calendar.MINUTE)-60 - seedSecondDegrees / 360.0) * (-360 / 60);
         double seedMinuteDegrees2  = (calendar.get(Calendar.MINUTE) + seedSecondDegrees / 360.0) * (360 / 60);
         double seedHourDegrees    = (calendar.get(Calendar.HOUR) + seedMinuteDegrees2/360) * (-360 / 12);
@@ -327,425 +330,176 @@ public class Main extends Application {
         final Timeline secondTime40 = new Timeline(
                 new KeyFrame(
                         Duration.seconds(60),
-                        new KeyValue(
-                                secondRotate40.angleProperty(),
-                                360 + seedSecondDegrees*20,
-                                Interpolator.LINEAR
-                        )
-                )
-        );
+                        new KeyValue(secondRotate40.angleProperty(), 360 + seedSecondDegrees2*20, Interpolator.LINEAR)));
         final Timeline secondTime39 = new Timeline(
                 new KeyFrame(
                         Duration.seconds(60),
-                        new KeyValue(
-                                secondRotate39.angleProperty(),
-                                360 + seedSecondDegrees*19.5,
-                                Interpolator.LINEAR
-                        )
-                )
-        );
+                        new KeyValue(secondRotate39.angleProperty(), 360 + seedSecondDegrees2*19.5, Interpolator.LINEAR)));
         final Timeline secondTime38 = new Timeline(
                 new KeyFrame(
                         Duration.seconds(60),
-                        new KeyValue(
-                                secondRotate38.angleProperty(),
-                                360 + seedSecondDegrees*19,
-                                Interpolator.LINEAR
-                        )
-                )
-        );
+                        new KeyValue(secondRotate38.angleProperty(), 360 + seedSecondDegrees2*19, Interpolator.LINEAR)));
         final Timeline secondTime37 = new Timeline(
                 new KeyFrame(
                         Duration.seconds(60),
-                        new KeyValue(
-                                secondRotate37.angleProperty(),
-                                360 + seedSecondDegrees*18.5,
-                                Interpolator.LINEAR
-                        )
-                )
-        );
+                        new KeyValue(secondRotate37.angleProperty(), 360 + seedSecondDegrees2*18.5, Interpolator.LINEAR)));
         final Timeline secondTime36 = new Timeline(
                 new KeyFrame(
                         Duration.seconds(60),
-                        new KeyValue(
-                                secondRotate36.angleProperty(),
-                                360 + seedSecondDegrees*18,
-                                Interpolator.LINEAR
-                        )
-                )
-        );
+                        new KeyValue(secondRotate36.angleProperty(), 360 + seedSecondDegrees2*18, Interpolator.LINEAR)));
         final Timeline secondTime35 = new Timeline(
                 new KeyFrame(
                         Duration.seconds(60),
-                        new KeyValue(
-                                secondRotate35.angleProperty(),
-                                360 + seedSecondDegrees*17.5,
-                                Interpolator.LINEAR
-                        )
-                )
-        );
+                        new KeyValue(secondRotate35.angleProperty(), 360 + seedSecondDegrees2*17.5, Interpolator.LINEAR)));
         final Timeline secondTime34 = new Timeline(
                 new KeyFrame(
                         Duration.seconds(60),
-                        new KeyValue(
-                                secondRotate34.angleProperty(),
-                                360 + seedSecondDegrees*17,
-                                Interpolator.LINEAR
-                        )
-                )
-        );
+                        new KeyValue(secondRotate34.angleProperty(), 360 + seedSecondDegrees2*17, Interpolator.LINEAR)));
         final Timeline secondTime33 = new Timeline(
                 new KeyFrame(
                         Duration.seconds(60),
-                        new KeyValue(
-                                secondRotate33.angleProperty(),
-                                360 + seedSecondDegrees*16.5,
-                                Interpolator.LINEAR
-                        )
-                )
-        );
+                        new KeyValue(secondRotate33.angleProperty(), 360 + seedSecondDegrees2*16.5, Interpolator.LINEAR)));
         final Timeline secondTime32 = new Timeline(
                 new KeyFrame(
                         Duration.seconds(60),
-                        new KeyValue(
-                                secondRotate32.angleProperty(),
-                                360 + seedSecondDegrees*16,
-                                Interpolator.LINEAR
-                        )
-                )
-        );
+                        new KeyValue(secondRotate32.angleProperty(), 360 + seedSecondDegrees2*16, Interpolator.LINEAR)));
         final Timeline secondTime31 = new Timeline(
                 new KeyFrame(
                         Duration.seconds(60),
-                        new KeyValue(
-                                secondRotate31.angleProperty(),
-                                360 + seedSecondDegrees*15.5,
-                                Interpolator.LINEAR
-                        )
-                )
-        );
+                        new KeyValue(secondRotate31.angleProperty(), 360 + seedSecondDegrees2*15.5, Interpolator.LINEAR)));
         final Timeline secondTime30 = new Timeline(
                 new KeyFrame(
                         Duration.seconds(60),
-                        new KeyValue(
-                                secondRotate30.angleProperty(),
-                                360 + seedSecondDegrees*15,
-                                Interpolator.LINEAR
-                        )
-                )
-        );
+                        new KeyValue(secondRotate30.angleProperty(), 360 + seedSecondDegrees2*15, Interpolator.LINEAR)));
         final Timeline secondTime29 = new Timeline(
                 new KeyFrame(
                         Duration.seconds(60),
-                        new KeyValue(
-                                secondRotate29.angleProperty(),
-                                360 + seedSecondDegrees*14.5,
-                                Interpolator.LINEAR
-                        )
-                )
-        );
+                        new KeyValue(secondRotate29.angleProperty(), 360 + seedSecondDegrees2*14.5, Interpolator.LINEAR)));
         final Timeline secondTime28 = new Timeline(
                 new KeyFrame(
                         Duration.seconds(60),
-                        new KeyValue(
-                                secondRotate28.angleProperty(),
-                                360 + seedSecondDegrees*14,
-                                Interpolator.LINEAR
-                        )
-                )
-        );
+                        new KeyValue(secondRotate28.angleProperty(), 360 + seedSecondDegrees2*14, Interpolator.LINEAR)));
         final Timeline secondTime27 = new Timeline(
                 new KeyFrame(
                         Duration.seconds(60),
-                        new KeyValue(
-                                secondRotate27.angleProperty(),
-                                360 + seedSecondDegrees*13.5,
-                                Interpolator.LINEAR
-                        )
-                )
-        );
+                        new KeyValue(secondRotate27.angleProperty(), 360 + seedSecondDegrees2*13.5, Interpolator.LINEAR)));
         final Timeline secondTime26 = new Timeline(
                 new KeyFrame(
                         Duration.seconds(60),
-                        new KeyValue(
-                                secondRotate26.angleProperty(),
-                                360 + seedSecondDegrees*13,
-                                Interpolator.LINEAR
-                        )
-                )
-        );
+                        new KeyValue(secondRotate26.angleProperty(), 360 + seedSecondDegrees2*13, Interpolator.LINEAR)));
         final Timeline secondTime25 = new Timeline(
                 new KeyFrame(
                         Duration.seconds(60),
-                        new KeyValue(
-                                secondRotate25.angleProperty(),
-                                360 + seedSecondDegrees*12.5,
-                                Interpolator.LINEAR
-                        )
-                )
-        );
+                        new KeyValue(secondRotate25.angleProperty(), 360 + seedSecondDegrees2*12.5, Interpolator.LINEAR)));
         final Timeline secondTime24 = new Timeline(
                 new KeyFrame(
                         Duration.seconds(60),
-                        new KeyValue(
-                                secondRotate24.angleProperty(),
-                                360 + seedSecondDegrees*12,
-                                Interpolator.LINEAR
-                        )
-                )
-        );
+                        new KeyValue(secondRotate24.angleProperty(), 360 + seedSecondDegrees2*12, Interpolator.LINEAR)));
         final Timeline secondTime23 = new Timeline(
                 new KeyFrame(
                         Duration.seconds(60),
-                        new KeyValue(
-                                secondRotate23.angleProperty(),
-                                360 + seedSecondDegrees*11.5,
-                                Interpolator.LINEAR
-                        )
-                )
-        );
+                        new KeyValue(secondRotate23.angleProperty(), 360 + seedSecondDegrees2*11.5, Interpolator.LINEAR)));
         final Timeline secondTime22 = new Timeline(
                 new KeyFrame(
                         Duration.seconds(60),
-                        new KeyValue(
-                                secondRotate22.angleProperty(),
-                                360 + seedSecondDegrees*11,
-                                Interpolator.LINEAR
-                        )
-                )
-        );
+                        new KeyValue(secondRotate22.angleProperty(), 360 + seedSecondDegrees2*11, Interpolator.LINEAR)));
         final Timeline secondTime21 = new Timeline(
                 new KeyFrame(
                         Duration.seconds(60),
-                        new KeyValue(
-                                secondRotate21.angleProperty(),
-                                360 + seedSecondDegrees*10.5,
-                                Interpolator.LINEAR
-                        )
-                )
-        );
+                        new KeyValue(secondRotate21.angleProperty(), 360 + seedSecondDegrees2*10.5, Interpolator.LINEAR)));
         final Timeline secondTime20 = new Timeline(
                 new KeyFrame(
                         Duration.seconds(60),
-                        new KeyValue(
-                                secondRotate20.angleProperty(),
-                                360 + seedSecondDegrees*10,
-                                Interpolator.LINEAR
-                        )
-                )
-        );
+                        new KeyValue(secondRotate20.angleProperty(), 360 + seedSecondDegrees2*10, Interpolator.LINEAR)));
         final Timeline secondTime19 = new Timeline(
                 new KeyFrame(
                         Duration.seconds(60),
-                        new KeyValue(
-                                secondRotate19.angleProperty(),
-                                360 + seedSecondDegrees*9.5,
-                                Interpolator.LINEAR
-                        )
-                )
-        );
+                        new KeyValue(secondRotate19.angleProperty(), 360 + seedSecondDegrees2*9.5, Interpolator.LINEAR)));
         final Timeline secondTime18 = new Timeline(
                 new KeyFrame(
                         Duration.seconds(60),
-                        new KeyValue(
-                                secondRotate18.angleProperty(),
-                                360 + seedSecondDegrees*9,
-                                Interpolator.LINEAR
-                        )
-                )
-        );
+                        new KeyValue(secondRotate18.angleProperty(), 360 + seedSecondDegrees2*9, Interpolator.LINEAR)));
         final Timeline secondTime17 = new Timeline(
                 new KeyFrame(
                         Duration.seconds(60),
-                        new KeyValue(
-                                secondRotate17.angleProperty(),
-                                360 + seedSecondDegrees*8.5,
-                                Interpolator.LINEAR
-                        )
-                )
-        );
+                        new KeyValue(secondRotate17.angleProperty(), 360 + seedSecondDegrees2*8.5, Interpolator.LINEAR)));
         final Timeline secondTime16 = new Timeline(
                 new KeyFrame(
                         Duration.seconds(60),
-                        new KeyValue(
-                                secondRotate16.angleProperty(),
-                                360 + seedSecondDegrees*8,
-                                Interpolator.LINEAR
-                        )
-                )
-        );
+                        new KeyValue(secondRotate16.angleProperty(), 360 + seedSecondDegrees2*8, Interpolator.LINEAR)));
         final Timeline secondTime15 = new Timeline(
                 new KeyFrame(
                         Duration.seconds(60),
-                        new KeyValue(
-                                secondRotate15.angleProperty(),
-                                360 + seedSecondDegrees*7.5,
-                                Interpolator.LINEAR
-                        )
-                )
-        );
+                        new KeyValue(secondRotate15.angleProperty(), 360 + seedSecondDegrees2*7.5, Interpolator.LINEAR)));
         final Timeline secondTime14 = new Timeline(
                 new KeyFrame(
                         Duration.seconds(60),
-                        new KeyValue(
-                                secondRotate14.angleProperty(),
-                                360 + seedSecondDegrees*7,
-                                Interpolator.LINEAR
-                        )
-                )
-        );
+                        new KeyValue(secondRotate14.angleProperty(), 360 + seedSecondDegrees2*7, Interpolator.LINEAR)));
         final Timeline secondTime13 = new Timeline(
                 new KeyFrame(
                         Duration.seconds(60),
-                        new KeyValue(
-                                secondRotate13.angleProperty(),
-                                360 + seedSecondDegrees*6.5,
-                                Interpolator.LINEAR
-                        )
-                )
-        );
+                        new KeyValue(secondRotate13.angleProperty(), 360 + seedSecondDegrees2*6.5, Interpolator.LINEAR)));
         final Timeline secondTime12 = new Timeline(
                 new KeyFrame(
                         Duration.seconds(60),
-                        new KeyValue(
-                                secondRotate12.angleProperty(),
-                                360 + seedSecondDegrees*6,
-                                Interpolator.LINEAR
-                        )
-                )
-        );
+                        new KeyValue(secondRotate12.angleProperty(), 360 + seedSecondDegrees2*6, Interpolator.LINEAR)));
         final Timeline secondTime11 = new Timeline(
                 new KeyFrame(
                         Duration.seconds(60),
-                        new KeyValue(
-                                secondRotate11.angleProperty(),
-                                360 + seedSecondDegrees*5.5,
-                                Interpolator.LINEAR
-                        )
-                )
-        );
+                        new KeyValue(secondRotate11.angleProperty(), 360 + seedSecondDegrees2*5.5, Interpolator.LINEAR)));
         final Timeline secondTime10 = new Timeline(
                 new KeyFrame(
                         Duration.seconds(60),
-                        new KeyValue(
-                                secondRotate10.angleProperty(),
-                                360 + seedSecondDegrees*5,
-                                Interpolator.LINEAR
-                        )
-                )
-        );
+                        new KeyValue(secondRotate10.angleProperty(), 360 + seedSecondDegrees2*5, Interpolator.LINEAR)));
         final Timeline secondTime9 = new Timeline(
                 new KeyFrame(
                         Duration.seconds(60),
-                        new KeyValue(
-                                secondRotate9.angleProperty(),
-                                360 + seedSecondDegrees*4.5,
-                                Interpolator.LINEAR
-                        )
-                )
-        );
+                        new KeyValue(secondRotate9.angleProperty(), 360 + seedSecondDegrees2*4.5, Interpolator.LINEAR)));
         final Timeline secondTime8 = new Timeline(
                 new KeyFrame(
                         Duration.seconds(60),
-                        new KeyValue(
-                                secondRotate8.angleProperty(),
-                                360 + seedSecondDegrees*4,
-                                Interpolator.LINEAR
-                        )
-                )
-        );
+                        new KeyValue(secondRotate8.angleProperty(), 360 + seedSecondDegrees2*4, Interpolator.LINEAR)));
         final Timeline secondTime7 = new Timeline(
                 new KeyFrame(
                         Duration.seconds(60),
-                        new KeyValue(
-                                secondRotate7.angleProperty(),
-                                360 + seedSecondDegrees*3.5,
-                                Interpolator.LINEAR
-                        )
-                )
-        );
+                        new KeyValue(secondRotate7.angleProperty(), 360 + seedSecondDegrees2*3.5, Interpolator.LINEAR)));
 
         final Timeline secondTime6 = new Timeline(
                 new KeyFrame(
                         Duration.seconds(60),
-                        new KeyValue(
-                                secondRotate6.angleProperty(),
-                                360 + seedSecondDegrees2*3,
-                                Interpolator.LINEAR
-                        )
-                )
-        );
+                        new KeyValue(secondRotate6.angleProperty(), 360 + seedSecondDegrees2*3, Interpolator.LINEAR)));
         final Timeline secondTime5 = new Timeline(
                 new KeyFrame(
                         Duration.seconds(60),
-                        new KeyValue(
-                                secondRotate5.angleProperty(),
-                                360 + seedSecondDegrees2*2.5,
-                                Interpolator.LINEAR
-                        )
-                )
-        );
+                        new KeyValue(secondRotate5.angleProperty(), 360 + seedSecondDegrees2*2.5, Interpolator.LINEAR)));
         final Timeline secondTime4 = new Timeline(
                 new KeyFrame(
                         Duration.seconds(60),
-                        new KeyValue(
-                                secondRotate4.angleProperty(),
-                                360 + seedSecondDegrees*2,
-                                Interpolator.LINEAR
-                        )
-                )
-        );
+                        new KeyValue(secondRotate4.angleProperty(), 360 + seedSecondDegrees*2, Interpolator.LINEAR)));
         final Timeline secondTime3 = new Timeline(
                 new KeyFrame(
                         Duration.seconds(60),
-                        new KeyValue(
-                                secondRotate3.angleProperty(),
-                                360 + seedSecondDegrees*1.5,
-                                Interpolator.LINEAR
-                        )
-                )
-        );
-
+                        new KeyValue(secondRotate3.angleProperty(), 360 + seedSecondDegrees*1.5, Interpolator.LINEAR)));
         final Timeline secondTime2 = new Timeline(
                 new KeyFrame(
                         Duration.seconds(60),
-                        new KeyValue(
-                                secondRotate2.angleProperty(),
-                                360 + seedSecondDegrees2*1,
-                                Interpolator.LINEAR
-                        )
-                )
-        );
+                        new KeyValue(secondRotate2.angleProperty(), 360 + seedSecondDegrees2*1, Interpolator.LINEAR)));
         final Timeline secondTime1 = new Timeline(
                 new KeyFrame(
                         Duration.seconds(60),
-                        new KeyValue(
-                                secondRotate1.angleProperty(),
-                                360 + seedSecondDegrees2*0.5,
-                                Interpolator.LINEAR
-                        )
-                )
-        );
+                        new KeyValue(secondRotate1.angleProperty(), 360 + seedSecondDegrees2*0.5, Interpolator.LINEAR)));
+
         final Timeline secondTime = new Timeline(
-                new KeyFrame(
-                        Duration.seconds(60),
-                        new KeyValue(
-                                secondRotate.angleProperty(),
-                                360 + seedSecondDegrees,
-                                Interpolator.LINEAR
-                        )
-                )
-        );
+                new KeyFrame(Duration.seconds(60), new KeyValue(secondRotate.angleProperty(), 360 + seedSecondDegrees, Interpolator.LINEAR)));
         final Timeline minuteTime = new Timeline(
-                new KeyFrame(Duration.minutes(60), new KeyValue(minuteRotate.angleProperty(), seedMinuteDegrees-360, Interpolator.LINEAR))
-        );
-        Timeline hourTime = new Timeline(
-                new KeyFrame(Duration.hours(12), new KeyValue(hourRotate.angleProperty(), seedHourDegrees-360,Interpolator.LINEAR))
-        );
+                new KeyFrame(Duration.minutes(60), new KeyValue(minuteRotate.angleProperty(), seedMinuteDegrees-360, Interpolator.LINEAR)));
+        final Timeline hourTime = new Timeline(
+                new KeyFrame(Duration.hours(12), new KeyValue(hourRotate.angleProperty(), seedHourDegrees-360,Interpolator.LINEAR)));
 
         secondTime.setCycleCount(Animation.INDEFINITE);
         minuteTime.setCycleCount(Animation.INDEFINITE);
         hourTime.setCycleCount(Animation.INDEFINITE);
+
         secondTime1.setCycleCount(Animation.INDEFINITE);
         secondTime2.setCycleCount(Animation.INDEFINITE);
         secondTime3.setCycleCount(Animation.INDEFINITE);
@@ -790,6 +544,7 @@ public class Main extends Application {
         secondTime.play();
         minuteTime.play();
         hourTime.play();
+
         secondTime1.play();
         secondTime2.play();
         secondTime3.play();
@@ -834,14 +589,63 @@ public class Main extends Application {
         music();
 
         Group root = new Group(imageView, circle40, circle39, circle38, circle37,circle36, circle35, circle34, circle33, circle32, circle31, circle30, circle29, circle28, circle27,circle26, circle25, circle24, circle23, circle22, circle21, circle20, circle19, circle18, circle17,circle16, circle15, circle14, circle13, circle12, circle11, circle10, circle9,circle8, circle7, circle6, circle5, circle4, circle3, circle2, circle1, hourImage, minuteImage, secondImage, secondHand);
-        Scene scene = new Scene(root, 720,720);
-        stage.setMaxHeight(755);
-        stage.setMinHeight(755);
+
+        BackgroundFill bf = new BackgroundFill(Color.web("#000316"), new CornerRadii(10), null);
+        Background background = new Background(bf);
+
+        TextField tf1 = new TextField("WORMHOLE CLOCK");
+        tf1.setBackground(new Background(bf));
+        tf1.setEditable(false);
+        tf1.setFocusTraversable(false);
+        tf1.setAlignment(Pos.BOTTOM_LEFT);
+        tf1.setMinHeight(30);
+        tf1.setMaxHeight(30);
+        tf1.setMinWidth(690);
+        tf1.setStyle("-fx-text-inner-color: #988A26;");
+        tf1.setCursor(Cursor.DEFAULT);
+
+        TextField tf2 = new TextField("2020 @Georgich");
+        tf2.setBackground(new Background(bf));
+        tf2.setEditable(false);
+        tf2.setFocusTraversable(false);
+        tf2.setAlignment(Pos.CENTER_RIGHT);
+        tf2.setMinHeight(30);
+        tf2.setMaxHeight(30);
+        tf2.setStyle("-fx-text-inner-color: #988A26;");
+        tf2.setCursor(Cursor.DEFAULT);
+
+        Button btExit = new Button("X");
+        btExit.setTextFill(Color.web("#986226"));
+        btExit.setBackground(background);
+        btExit.setOnAction(new EventHandler() {
+            public void handle(Event event) {
+                exit();
+            }
+        });
+
+        HBox hbox1 = new HBox(tf1, btExit);
+        hbox1.setMinHeight(30);
+        hbox1.setAlignment(Pos.BOTTOM_RIGHT);
+        hbox1.setBackground(background);
+
+        HBox hbox2 = new HBox(tf2);
+        hbox2.setMinHeight(30);
+        hbox2.setAlignment(Pos.CENTER_RIGHT);
+        hbox2.setBackground(background);
+
+        VBox vbox = new VBox(hbox1,root,hbox2);
+        vbox.setBackground(background);
+
+        Scene scene = new Scene(vbox, 720,780, Color.TRANSPARENT);
+        stage.setMaxHeight(795);
+        stage.setMinHeight(795);
         stage.setMaxWidth(735);
         stage.setMinWidth(735);
         stage.setTitle("Wormhole Clock");
         stage.setScene(scene);
+        stage.initStyle(StageStyle.TRANSPARENT);
         stage.show();
+        com.sun.glass.ui.Window.getWindows().get(0).setUndecoratedMoveRectangle(15);
 
     }
 
