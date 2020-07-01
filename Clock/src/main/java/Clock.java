@@ -1,4 +1,4 @@
-package sample;
+
 
 import javafx.animation.*;
 import javafx.application.Application;
@@ -13,6 +13,8 @@ import javafx.scene.Scene;
 import javafx.scene.Group;
 import javafx.util.Duration;
 
+
+import java.net.URL;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
@@ -20,18 +22,20 @@ public class Clock extends Application {
     @Override
     public void start(Stage stage) {
 
-        Image image = new Image("file:14.jpg", 720, 720, false, false);
+        URL path = getClass().getResource("map.jpg");
+
+        Image image = new Image(path.toString(), 720, 720, false, false);
 
         ImageView imageView = new ImageView(image);
         Calendar calendar = GregorianCalendar.getInstance();
         Circle face = new Circle (357,357,10);
 
-        Line secondHand   = new Line(0, 60, 0, -283);
-        secondHand.setTranslateX(357);   secondHand.setTranslateY(357); secondHand.setStroke(Color.DARKRED); secondHand.setStrokeWidth(2);
-        Line minuteHand   = new Line(0, 0, 0, -265);
-        minuteHand.setTranslateX(357);   minuteHand.setTranslateY(357); minuteHand.setStroke(Color.DARKRED); minuteHand.setStrokeWidth(4);
-        Line hourHand   = new Line(0, 0, 0, -143);
-        hourHand.setTranslateX(357);   hourHand.setTranslateY(357); hourHand.setStroke(Color.DARKRED); hourHand.setStrokeWidth(10);
+        Line secondHand   = new Line(0, 60, 0, -290);
+        secondHand.setTranslateX(357);   secondHand.setTranslateY(357); secondHand.setStroke(Color.BLACK); secondHand.setStrokeWidth(2);
+        Line minuteHand   = new Line(0, 0, 0, -270);
+        minuteHand.setTranslateX(357);   minuteHand.setTranslateY(357); minuteHand.setStroke(Color.BLACK); minuteHand.setStrokeWidth(4);
+        Line hourHand   = new Line(0, 0, 0, -150);
+        hourHand.setTranslateX(357);   hourHand.setTranslateY(357); hourHand.setStroke(Color.BLACK); hourHand.setStrokeWidth(10);
 
         double seedSecondDegrees  = calendar.get(Calendar.SECOND) * (360 / 60);
         double seedMinuteDegrees  = (calendar.get(Calendar.MINUTE) + seedSecondDegrees / 360.0) * (360 / 60);
