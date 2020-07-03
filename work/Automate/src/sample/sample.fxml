@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <VBox layoutX="14.0" layoutY="14.0" prefHeight="322.0" prefWidth="334.0">
+         <children>
+            <Label prefHeight="29.0" prefWidth="225.0" text="Prompt" />
+            <TextArea fx:id="taPrompt" prefHeight="65.0" prefWidth="374.0" />
+            <Label prefHeight="33.0" prefWidth="214.0" text="Answer" />
+            <TextArea fx:id="taAnswer" prefHeight="112.0" prefWidth="374.0" />
+         </children>
+      </VBox>
+      <VBox layoutX="14.0" layoutY="344.0" prefHeight="249.0" prefWidth="144.0">
+         <children>
+            <ToggleButton fx:id="btnOnOff" mnemonicParsing="false" onAction="#onClickOnOffBtn" prefHeight="41.0" prefWidth="196.0" text="ON / OFF" />
+         </children>
+      </VBox>
+      <VBox layoutX="163.0" layoutY="344.0" prefHeight="249.0" prefWidth="182.0">
+         <children>
+            <Label prefHeight="30.0" prefWidth="91.0" text="Your cash" />
+            <TextField fx:id="tfYourCash" prefHeight="32.0" prefWidth="239.0" />
+            <Label prefHeight="33.0" prefWidth="102.0" text="Add cash" />
+            <TextField fx:id="tfAddCash" prefHeight="31.0" prefWidth="239.0" />
+            <Button fx:id="btnCoin" mnemonicParsing="false" onAction="#onClickCoinBtn" prefHeight="33.0" prefWidth="240.0" text="Coin" />
+         </children>
+      </VBox>
+      <VBox alignment="TOP_CENTER" layoutX="354.0" layoutY="14.0" prefHeight="582.0" prefWidth="240.0">
+         <children>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <VBox prefHeight="141.0" prefWidth="120.0">
+                     <children>
+                        <RadioButton fx:id="rbCoffee" mnemonicParsing="false" text="Coffee">
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </VBox.margin>
+                        </RadioButton>
+                        <RadioButton fx:id="rbTea" mnemonicParsing="false" text="Tea">
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </VBox.margin>
+                        </RadioButton>
+                        <RadioButton fx:id="rbJuice" mnemonicParsing="false" text="Juice">
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </VBox.margin>
+                        </RadioButton>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="141.0" prefWidth="108.0">
+                     <children>
+                        <CheckBox fx:id="cbSugar" mnemonicParsing="false" text="Sugar">
+                           <padding>
+                              <Insets top="15.0" />
+                           </padding>
+                        </CheckBox>
+                        <CheckBox fx:id="cbMilk" mnemonicParsing="false" text="Milk">
+                           <padding>
+                              <Insets top="15.0" />
+                           </padding>
+                        </CheckBox>
+                        <CheckBox fx:id="cbIce" mnemonicParsing="false" text="Ice">
+                           <padding>
+                              <Insets top="15.0" />
+                           </padding>
+                        </CheckBox>
+                        <CheckBox fx:id="cbSyrup" mnemonicParsing="false" text="Syrup">
+                           <padding>
+                              <Insets top="15.0" />
+                           </padding>
+                        </CheckBox>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <ImageView fx:id="ivIcon" fitHeight="150.0" fitWidth="154.0" pickOnBounds="true" preserveRatio="true" />
+            <Button fx:id="btnCook" mnemonicParsing="false" onAction="#onClickCookBtn" prefHeight="35.0" prefWidth="190.0" text="Cook" />
+            <Button fx:id="btnCancel" mnemonicParsing="false" onAction="#onClickCancelBtn" prefHeight="38.0" prefWidth="190.0" text="Cancel" />
+         </children>
+      </VBox>
+   </children>
+</Pane>
