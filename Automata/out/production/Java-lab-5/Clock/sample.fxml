@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1200.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Clock.Sample">
+   <children>
+      <ImageView fitHeight="1200.0" fitWidth="1200.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Clock.jpg" />
+         </image>
+      </ImageView>
+      <Line fx:id="secondHand" endX="600.0" endY="350.0" fill="#2e2020" startX="600.0" startY="675.0" stroke="#9f7d7d" strokeWidth="7.0" />
+      <Line fx:id="minuteHand" endX="600.0" endY="300.0" startX="600.0" startY="675.0" stroke="#9f7d7d" strokeWidth="12.0" />
+      <Line fx:id="hourHand" endX="600.0" endY="400.0" startX="600.0" startY="675.0" stroke="#9f7d7d" strokeWidth="18.0" />
+      <Circle fill="#877984" layoutX="600.0" layoutY="600.0" radius="40.0" stroke="BLACK" strokeType="INSIDE" />
+   </children>
+</Pane>
