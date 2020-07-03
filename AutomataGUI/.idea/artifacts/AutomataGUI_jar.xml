@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="AutomataGUI:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/AutomataGUI_jar</output-path>
+    <root id="archive" name="AutomataGUI.jar">
+      <element id="module-output" name="AutomataGUI" />
+    </root>
+  </artifact>
+</component>
