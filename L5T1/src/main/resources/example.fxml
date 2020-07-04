@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="540.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="example.Brain">
+    <children>
+        <ImageView fitHeight="610.0" fitWidth="530.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@Automata.png" />
+            </image>
+        </ImageView>
+        <Label fx:id="lblNameLeft1" layoutX="70.0" layoutY="215.0" prefHeight="20.0" prefWidth="100.0" text="Кофе" textFill="#ffbb00">
+            <font>
+                <Font size="9.0" />
+            </font>
+        </Label>
+        <Label fx:id="lblNameLeft2" layoutX="72.0" layoutY="241.0" prefHeight="20.0" prefWidth="100.0" text="Чай" textFill="#ffbb00">
+            <font>
+                <Font size="9.0" />
+            </font>
+        </Label>
+        <Label fx:id="lblNameLeft3" layoutX="70.0" layoutY="266.0" prefHeight="20.0" prefWidth="100.0" text="Крепкий кофе" textFill="#ffbb00">
+            <font>
+                <Font size="9.0" />
+            </font>
+        </Label>
+        <Label fx:id="lblNameLeft4" layoutX="70.0" layoutY="290.0" prefHeight="20.0" prefWidth="100.0" text="Чай с молоком" textFill="#ffbb00">
+            <font>
+                <Font size="9.0" />
+            </font>
+        </Label>
+        <Label fx:id="lblNameLeft5" layoutX="70.0" layoutY="316.0" prefHeight="20.0" prefWidth="100.0" text="Холодный чай" textFill="#ffbb00">
+            <font>
+                <Font size="9.0" />
+            </font>
+        </Label>
+        <Label fx:id="lblNameLeft6" layoutX="71.0" layoutY="341.0" prefHeight="20.0" prefWidth="100.0" text="Кофе с лимоном" textFill="#ffbb00">
+            <font>
+                <Font size="9.0" />
+            </font>
+        </Label>
+        <Label fx:id="lblNameRight1" layoutX="234.0" layoutY="215.0" prefHeight="20.0" prefWidth="100.0" text="Вода" textFill="#ffbb00">
+            <font>
+                <Font size="9.0" />
+            </font>
+        </Label>
+        <Button fx:id="btnLeft1" layoutX="178.0" layoutY="216.0" mnemonicParsing="false" onAction="#btnLeft1Pressed" prefHeight="10.0" prefWidth="15.0" style="-fx-background-radius: 100;">
+            <font>
+                <Font size="6.0" />
+            </font>
+        </Button>
+        <Button fx:id="btnLeft2" layoutX="178.0" layoutY="242.0" mnemonicParsing="false" onAction="#btnLeft2Pressed" prefHeight="10.0" prefWidth="15.0" style="-fx-background-radius: 100;">
+            <font>
+                <Font size="6.0" />
+            </font>
+        </Button>
+        <Button fx:id="btnLeft3" layoutX="177.0" layoutY="268.0" mnemonicParsing="false" onAction="#btnLeft3Pressed" prefHeight="10.0" prefWidth="15.0" style="-fx-background-radius: 100;">
+            <font>
+                <Font size="6.0" />
+            </font>
+        </Button>
+        <Button fx:id="btnLeft4" layoutX="177.0" layoutY="292.0" mnemonicParsing="false" onAction="#btnLeft4Pressed" prefHeight="10.0" prefWidth="15.0" style="-fx-background-radius: 100;">
+            <font>
+                <Font size="6.0" />
+            </font>
+        </Button>
+        <Button fx:id="btnLeft5" layoutX="177.0" layoutY="318.0" mnemonicParsing="false" onAction="#btnLeft5Pressed" prefHeight="10.0" prefWidth="15.0" style="-fx-background-radius: 100;">
+            <font>
+                <Font size="6.0" />
+            </font>
+        </Button>
+        <Button fx:id="btnLeft6" layoutX="177.0" layoutY="343.0" mnemonicParsing="false" onAction="#btnLeft6Pressed" prefHeight="10.0" prefWidth="15.0" style="-fx-background-radius: 100;">
+            <font>
+                <Font size="6.0" />
+            </font>
+        </Button>
+        <Button fx:id="btnRight1" layoutX="342.0" layoutY="216.0" mnemonicParsing="false" onAction="#btnRight1Pressed" prefHeight="10.0" prefWidth="15.0" style="-fx-background-radius: 100;">
+            <font>
+                <Font size="6.0" />
+            </font>
+        </Button>
+
+        <Label fx:id="lblPriceLeft1" alignment="TOP_CENTER" layoutX="41.0" layoutY="213.0" prefHeight="17.0" prefWidth="21.0" style="-fx-background-color: #EA5441; -fx-background-radius: 20; -fx-border-color: #ffbb00; -fx-border-radius: 20;" text="25" textFill="#ffbb00" />
+        <Label fx:id="lblPriceLeft2" alignment="TOP_CENTER" layoutX="41.0" layoutY="240.0" prefHeight="17.0" prefWidth="21.0" style="-fx-background-color: #EA5441; -fx-background-radius: 20; -fx-border-color: #ffbb00; -fx-border-radius: 20;" text="25" textFill="#ffbb00" />
+        <Label fx:id="lblPriceLeft3" alignment="TOP_CENTER" layoutX="41.0" layoutY="265.0" prefHeight="17.0" prefWidth="21.0" style="-fx-background-color: #EA5441; -fx-background-radius: 20; -fx-border-color: #ffbb00; -fx-border-radius: 20;" text="25" textFill="#ffbb00" />
+        <Label fx:id="lblPriceLeft4" alignment="TOP_CENTER" layoutX="41.0" layoutY="289.0" prefHeight="17.0" prefWidth="21.0" style="-fx-background-color: #EA5441; -fx-background-radius: 20; -fx-border-color: #ffbb00; -fx-border-radius: 20;" text="25" textFill="#ffbb00" />
+        <Label fx:id="lblPriceLeft5" alignment="TOP_CENTER" layoutX="41.0" layoutY="315.0" prefHeight="17.0" prefWidth="21.0" style="-fx-background-color: #EA5441; -fx-background-radius: 20; -fx-border-color: #ffbb00; -fx-border-radius: 20;" text="25" textFill="#ffbb00" />
+        <Label fx:id="lblPriceLeft6" alignment="TOP_CENTER" layoutX="41.0" layoutY="341.0" prefHeight="17.0" prefWidth="21.0" style="-fx-background-color: #EA5441; -fx-background-radius: 20; -fx-border-color: #ffbb00; -fx-border-radius: 20;" text="25" textFill="#ffbb00" />
+        <Label fx:id="lblPriceRight1" alignment="TOP_CENTER" layoutX="207.0" layoutY="213.0" prefHeight="17.0" prefWidth="21.0" style="-fx-background-color: #EA5441; -fx-background-radius: 20; -fx-border-color: #ffbb00; -fx-border-radius: 20;" text="25" textFill="#ffbb00" />
+        <Label fx:id="lblChange" alignment="CENTER" layoutX="427.0" layoutY="479.0" prefHeight="46.0" prefWidth="66.0" style="-fx-background-color: white; -fx-border-color: gray; -fx-background-radius: 5; -fx-border-radius: 5;" text="СДАЧА" textFill="#545252" />
+        <Button fx:id="btnOn" layoutX="410.0" layoutY="11.0" mnemonicParsing="false" onAction="#switchOn" prefHeight="25.0" prefWidth="50.0" text="ВКЛ" />
+        <Button fx:id="btnOff" layoutX="461.0" layoutY="11.0" mnemonicParsing="false" onAction="#switchOff" prefHeight="25.0" prefWidth="50.0" text="ВЫКЛ" />
+        <ComboBox fx:id="cbCash" layoutX="420.0" layoutY="118.0" onAction="#getCash" prefHeight="25.0" prefWidth="79.0" promptText="РУБ." />
+        <Label fx:id="lblMessage" alignment="CENTER" contentDisplay="CENTER" layoutX="427.0" layoutY="278.0" prefHeight="110.0" prefWidth="66.0" style="-fx-background-color: #791500; -fx-background-radius: 15;" text="Включите автомат!" textAlignment="CENTER" textFill="WHITE" wrapText="true" />
+        <ProgressIndicator fx:id="piProgress" layoutX="173.0" layoutY="469.0" prefHeight="46.0" prefWidth="51.0" progress="0.0" />
+        <ImageView fx:id="ivCup" fitHeight="45.0" fitWidth="45.0" layoutX="173.0" layoutY="490.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@cup.png" />
+            </image>
+        </ImageView>
+        <Button fx:id="btnCancel" layoutX="419.0" layoutY="228.0" mnemonicParsing="false" onAction="#cancel" prefHeight="25.0" prefWidth="82.0" text="ОТМЕНА" />
+    </children>
+</Pane>
