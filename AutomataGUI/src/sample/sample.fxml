@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Point3D?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #373737; -fx-background-radius: 6;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <VBox prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #15191d; -fx-background-radius: 6;">
+         <children>
+            <HBox alignment="CENTER" prefHeight="22.0" prefWidth="800.0" style="-fx-background-color: #040506; -fx-background-radius: 6;">
+               <children>
+                  <ImageView fitHeight="25.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@pic/coffee.jpg" />
+                     </image>
+                     <HBox.margin>
+                        <Insets bottom="2.0" left="5.0" right="2.0" top="2.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label alignment="CENTER" prefHeight="17.0" prefWidth="105.0" text="Coffee-machine" textFill="#a79258" />
+                  <Region prefHeight="0.0" prefWidth="645.0" />
+                  <RadioButton fx:id="rbtClose" contentDisplay="CENTER" mnemonicParsing="false" onAction="#rbtCloseOnClick" prefHeight="17.0" prefWidth="0.0" selected="true" style="-fx-background-color: #040506;">
+
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                     <effect>
+                        <InnerShadow />
+                     </effect>
+                  </RadioButton>
+               </children></HBox>
+            <HBox prefHeight="583.0" prefWidth="800.0">
+               <children>
+                  <VBox alignment="TOP_CENTER" prefHeight="400.0" prefWidth="800.0">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="175.0" text="MENU" textFill="#a79258">
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <HBox prefHeight="317.0" prefWidth="550.0">
+                           <children>
+                              <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="275.0">
+                                 <children>
+                                    <Button fx:id="bt1" alignment="BASELINE_LEFT" disable="true" mnemonicParsing="false" onAction="#bt1Click" prefHeight="80.0" prefWidth="220.0" style="-fx-background-radius: 10;" text="40₽ Espresso" textAlignment="CENTER">
+                                       <VBox.margin>
+                                          <Insets left="10.0" right="10.0" top="30.0" />
+                                       </VBox.margin>
+                                       <graphic>
+                                          <ImageView fitHeight="69.0" fitWidth="95.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@pic/-espresso.jpg" />
+                                             </image>
+                                             <effect>
+                                                <InnerShadow />
+                                             </effect>
+                                          </ImageView>
+                                       </graphic>
+                                       <font>
+                                          <Font name="System Italic" size="14.0" />
+                                       </font>
+                                       <effect>
+                                          <InnerShadow />
+                                       </effect>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                    <Button fx:id="bt2" alignment="BASELINE_LEFT" disable="true" mnemonicParsing="false" onAction="#bt2Click" prefHeight="80.0" prefWidth="220.0" style="-fx-background-radius: 10;" text="45₽ Americano">
+                                       <graphic>
+                                          <ImageView fitHeight="69.0" fitWidth="95.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@pic/-americano.jpg" />
+                                             </image>
+                                             <effect>
+                                                <InnerShadow />
+                                             </effect>
+                                          </ImageView>
+                                       </graphic>
+                                       <VBox.margin>
+                                          <Insets left="10.0" right="10.0" top="10.0" />
+                                       </VBox.margin>
+                                       <font>
+                                          <Font name="System Italic" size="13.0" />
+                                       </font>
+                                       <effect>
+                                          <InnerShadow />
+                                       </effect>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                    </Button>
+                                    <Button fx:id="bt3" alignment="BASELINE_LEFT" disable="true" mnemonicParsing="false" onAction="#bt3Click" prefHeight="80.0" prefWidth="220.0" style="-fx-background-radius: 10;" text="55₽ Latte">
+                                       <graphic>
+                                          <ImageView fitHeight="69.0" fitWidth="95.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@pic/-latte.jpg" />
+                                             </image>
+                                             <effect>
+                                                <InnerShadow />
+                                             </effect>
+                                          </ImageView>
+                                       </graphic>
+                                       <VBox.margin>
+                                          <Insets left="10.0" right="10.0" top="10.0" />
+                                       </VBox.margin>
+                                       <font>
+                                          <Font name="System Italic" size="14.0" />
+                                       </font>
+                                       <effect>
+                                          <InnerShadow />
+                                       </effect>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="275.0">
+                                 <children>
+                                    <Button fx:id="bt4" alignment="BASELINE_LEFT" disable="true" mnemonicParsing="false" onAction="#bt4Click" prefHeight="80.0" prefWidth="220.0" style="-fx-background-radius: 10;" text="65₽ Cappuccino">
+                                       <graphic>
+                                          <ImageView fitHeight="69.0" fitWidth="95.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@pic/-cappucino.jpg" />
+                                             </image>
+                                             <effect>
+                                                <InnerShadow />
+                                             </effect>
+                                          </ImageView>
+                                       </graphic>
+                                       <VBox.margin>
+                                          <Insets left="10.0" right="10.0" top="30.0" />
+                                       </VBox.margin>
+                                       <font>
+                                          <Font name="System Italic" size="14.0" />
+                                       </font>
+                                       <effect>
+                                          <InnerShadow />
+                                       </effect>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                    <Button fx:id="bt5" alignment="BASELINE_LEFT" disable="true" mnemonicParsing="false" onAction="#bt5Click" prefHeight="80.0" prefWidth="220.0" style="-fx-background-radius: 10;" text="80₽ Macchiato">
+                                       <graphic>
+                                          <ImageView fitHeight="69.0" fitWidth="95.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@pic/-macchiato.jpg" />
+                                             </image>
+                                             <effect>
+                                                <InnerShadow />
+                                             </effect>
+                                          </ImageView>
+                                       </graphic>
+                                       <VBox.margin>
+                                          <Insets left="10.0" right="10.0" top="10.0" />
+                                       </VBox.margin>
+                                       <font>
+                                          <Font name="System Italic" size="14.0" />
+                                       </font>
+                                       <effect>
+                                          <InnerShadow />
+                                       </effect>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                    <Button fx:id="bt6" alignment="BASELINE_LEFT" disable="true" mnemonicParsing="false" onAction="#bt6Click" prefHeight="80.0" prefWidth="220.0" style="-fx-background-radius: 10;" text="110₽ Mocha">
+                                       <graphic>
+                                          <ImageView fitHeight="69.0" fitWidth="95.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@pic/-mocco.jpg" />
+                                             </image>
+                                             <effect>
+                                                <InnerShadow />
+                                             </effect>
+                                          </ImageView>
+                                       </graphic>
+                                       <VBox.margin>
+                                          <Insets left="10.0" right="10.0" top="10.0" />
+                                       </VBox.margin>
+                                       <font>
+                                          <Font name="System Italic" size="14.0" />
+                                       </font>
+                                       <effect>
+                                          <InnerShadow />
+                                       </effect>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="70.0" prefWidth="549.0">
+                           <children>
+                              <TextField fx:id="tfStatus" disable="true" editable="false" prefWidth="381.0">
+                                 <HBox.margin>
+                                    <Insets left="28.0" top="20.0" />
+                                 </HBox.margin>
+                                 <effect>
+                                    <InnerShadow />
+                                 </effect>
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </TextField>
+                              <Button fx:id="btCooking" disable="true" mnemonicParsing="false" onAction="#cookClick" prefHeight="25.0" prefWidth="90.0" text="Cook!">
+                                 <HBox.margin>
+                                    <Insets left="24.0" top="20.0" />
+                                 </HBox.margin>
+                                 <effect>
+                                    <InnerShadow />
+                                 </effect>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <VBox alignment="CENTER" prefHeight="140.0" prefWidth="549.0">
+                           <children>
+                              <ProgressBar fx:id="pbCooking" disable="true" prefHeight="38.0" prefWidth="269.0" progress="0.0">
+                                 <effect>
+                                    <InnerShadow />
+                                 </effect>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                                 <cursor>
+                                    <Cursor fx:constant="DEFAULT" />
+                                 </cursor>
+                              </ProgressBar>
+                              <HBox prefHeight="24.0" prefWidth="549.0">
+                                 <children>
+                                    <ImageView fx:id="ivOff" fitHeight="29.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                                       <image>
+                                          <Image url="@pic/Off.jpg" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fx:id="ivOn" fitHeight="29.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                                       <image>
+                                          <Image url="@pic/On.jpg" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children></VBox>
+                  <Line endX="-90.0" endY="523.2929077148438" startX="-90.0" startY="1046.5858154296875" stroke="#a79258" strokeWidth="2.0">
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </Line>
+                  <VBox alignment="TOP_CENTER" prefHeight="400.0" prefWidth="500.0">
+                     <children>
+                        <VBox alignment="TOP_CENTER" style="-fx-background-color: #101316; -fx-background-radius: 20;">
+                           <children>
+                              <ToggleButton fx:id="tbOnOff" mnemonicParsing="false" onAction="#tgOnOffOnClick" text="OFF" textAlignment="CENTER">
+                                 <VBox.margin>
+                                    <Insets bottom="25.0" left="5.0" right="5.0" top="25.0" />
+                                 </VBox.margin>
+                                 <graphic>
+                                    <ImageView fx:id="ivOnOff" fitHeight="29.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@pic/Off.jpg" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <effect>
+                                    <InnerShadow />
+                                 </effect>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </ToggleButton>
+                           </children>
+                           <VBox.margin>
+                              <Insets left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                        </VBox>
+                        <VBox alignment="TOP_CENTER" prefHeight="295.0" prefWidth="250.0">
+                           <children>
+                              <Label text="Cash deposit" textFill="#a79258">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="20.0" left="10.0" right="10.0" top="40.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Button fx:id="btPutMoney" disable="true" mnemonicParsing="false" onAction="#btPutMoney" prefHeight="25.0" prefWidth="200.0" text="To put money">
+                                 <effect>
+                                    <InnerShadow />
+                                 </effect>
+                                 <VBox.margin>
+                                    <Insets left="30.0" right="30.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <ComboBox fx:id="cbCash" disable="true" onAction="#cbCashChoice" prefHeight="25.0" prefWidth="200.0" promptText="Input cash" visible="false">
+                                 <VBox.margin>
+                                    <Insets left="30.0" right="30.0" />
+                                 </VBox.margin>
+                                 <effect>
+                                    <InnerShadow />
+                                 </effect>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor></ComboBox>
+                              <Label text="Total money" textFill="#a79258">
+                                 <VBox.margin>
+                                    <Insets bottom="20.0" top="20.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="tfCurrentCash" alignment="CENTER" disable="true" editable="false" prefHeight="25.0" prefWidth="147.0">
+                                 <VBox.margin>
+                                    <Insets bottom="20.0" left="30.0" right="30.0" />
+                                 </VBox.margin>
+                                 <effect>
+                                    <InnerShadow />
+                                 </effect>
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </TextField>
+                              <Button fx:id="btPicUpChange" disable="true" mnemonicParsing="false" onAction="#btPicUpChangeOnClick" prefHeight="25.0" prefWidth="376.0" text="Pick up change">
+                                 <VBox.margin>
+                                    <Insets left="30.0" right="30.0" top="10.0" />
+                                 </VBox.margin>
+                                 <effect>
+                                    <InnerShadow />
+                                 </effect>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                           </children>
+                        </VBox>
+                        <ImageView fx:id="ivCoffee" fitHeight="87.0" fitWidth="146.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                           <image>
+                              <Image url="@pic/cup%20of%20coffee.jpg" />
+                           </image>
+                           <VBox.margin>
+                              <Insets bottom="20.0" />
+                           </VBox.margin>
+                        </ImageView>
+                        <Button fx:id="btTakeCoffee" alignment="CENTER" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#takeCoffee" prefHeight="26.0" prefWidth="192.0" text="Take your coffee" textFill="#a79258" visible="false">
+                           <font>
+                              <Font name="System Bold Italic" size="14.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="CLOSED_HAND" />
+                           </cursor>
+                           <effect>
+                              <InnerShadow />
+                           </effect>
+                        </Button>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox alignment="TOP_RIGHT" spacing="5.0" style="-fx-background-color: #040506; -fx-background-radius: 6;">
+               <children>
+                  <Label prefHeight="39.0" prefWidth="99.0" text="2020 @Georgich" textFill="#a79258">
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                     <rotationAxis>
+                        <Point3D />
+                     </rotationAxis>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</Pane>
